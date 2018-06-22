@@ -12,13 +12,16 @@ alias exity='exit'
 alias gti='git'
 eval "$(thefuck --alias please)"
 alias pls='please'
+alias relaod='reload'
 alias uo='up'
 
 # Lazy typing helpers
 alias add='git add'
 alias build='bin/pip install .'
+alias checkout='git checkout'
 alias commit='git commit'
 alias down='DOWN=`fc -ln -1`;DOWN=${DOWN##* };if [ -d "$DOWN" ];then cd "$DOWN";else cd `ls -td {.[^.],}?*/ 2>/dev/null|head -1`;fi'
+alias merge='git merge'
 alias profile='code ~/.profile'
 alias push='git push origin'
 alias py='bin/python'

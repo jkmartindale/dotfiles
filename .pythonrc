@@ -64,7 +64,7 @@ def reload() -> str:
         return "The PYTHONSTARTUP environment variable hasn't been set."
     return 'PYTHONSTARTUP file reloaded'
 
-# @command
+@command
 def block() -> str:
     """Execute block input (handy for pasting in code)."""
 

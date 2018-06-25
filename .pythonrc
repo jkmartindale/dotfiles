@@ -71,6 +71,21 @@ def enable_commands() -> None:
 ######################
 
 @command
+def block() -> str:
+    """Execute block input (handy for pasting in code)."""
+    # Print with accent color because we're inputting commands
+    print('\001\x1B[%dm\002Ctrl-D to run, Ctrl-C to cancel\001\x1B[%dm\002' % (accent - 2, accent))
+    try:
+        # Stolen from https://github.com/pixelb/scripts/blob/master/scripts/inpy
+        exec(sys.stdin.read(), globals())
+    except KeyboardInterrupt:
+        # Don't output an error if cancelled, and reset the color
+        sys.stderr.write('\x1b[0m')
+        pass
+    # Start the next prompt on a new line instead of immediately after ^D or ^C
+    return ''
+
+@command
 def exit() -> None:
     """Exit on `exit` instead of spitting out the HURR DURR USE PARENTHESIS message."""
     # ok, so I cheated a bit on the whole 'must return a string' thing
@@ -86,21 +101,6 @@ def reload() -> str:
     except KeyError:
         return "The PYTHONSTARTUP environment variable hasn't been set."
     return 'PYTHONSTARTUP file reloaded'
-
-@command
-def block() -> str:
-    """Execute block input (handy for pasting in code)."""
-    # Print with accent color because we're inputting commands
-    print('\001\x1B[%dm\002Ctrl-D to run, Ctrl-C to cancel\001\x1B[%dm\002' % (accent - 2, accent))
-    try:
-        # Stolen from https://github.com/pixelb/scripts/blob/master/scripts/inpy
-        exec(sys.stdin.read(), globals())
-    except KeyboardInterrupt:
-        # Don't output an error if cancelled, and reset the color
-        sys.stderr.write('\x1b[0m')
-        pass
-    # Start the next prompt on a new line instead of immediately after ^D or ^C
-    return ''
 
 ###################################################
 # Enable commands if you want them to actually work

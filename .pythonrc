@@ -14,7 +14,6 @@ accent = 36
 # sys.ps1 = '\001\033[%sm\002>>>\001\033[%sm\002 ' % (accent - 2, accent)
 # sys.ps2 = '\001\033[%sm\002...\001\033[%sm\002 ' % (accent - 2, accent)
 
-# Inspired by https://dzone.com/articles/exit-python-shell
 class Command(object):
     """A custom command to add to the interactive interpreter.
 

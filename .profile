@@ -18,6 +18,7 @@ alias uo='up'
 
 # Lazy typing helpers
 alias add='git add'
+alias branch='git checkout -b'
 alias build='bin/pip install .'
 alias checkout='git checkout'
 alias commit='git commit -m'

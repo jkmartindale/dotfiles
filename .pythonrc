@@ -25,17 +25,14 @@ accent = 36
         """Used when called as a statement."""
         return self.code()
 
-
     def __call__(self) -> None:
         """Used when called as a function."""
         print(self.__repr__())
 
-        
     def code(self) -> str:
         """Actual command code.
         
-        This is normally set by the @command decorator, though a default implementation is included in case someone tries to make a Command at the interactive interpreter and forgets to set `code()` themselves.
-
+        This is normally set by the @command decorator, though a default implementation is included in case someone tries to make a Command at the interactive interpreter and forgets to set `code()` themselves."""
         return 'Set the code attribute to a callable returning a string.'
 
 def command(function: Callable) -> Command:
@@ -43,7 +40,6 @@ def command(function: Callable) -> Command:
     
     The function name is used as the command name. The function cannot take any arguments and must return a string.
     """
-
     bootstrap = Command()
     bootstrap.code = function
     return bootstrap
@@ -51,14 +47,12 @@ def command(function: Callable) -> Command:
 @command
 def exit() -> None:
     """Exit on `exit` instead of spitting out the HURR DURR USE PARENTHESIS message."""
-    
     # ok, so I cheated a bit on the whole 'must return a string' thing
     raise SystemExit
 
 @command
 def reload() -> str:
     """Reload the PYTHONSTARTUP file without exiting and re-entering the interactive interpreter."""
-
     try:
         exec(open(os.environ['PYTHONSTARTUP']).read(), globals())
     except FileNotFoundError:
@@ -70,7 +64,6 @@ def reload() -> str:
 @command
 def block() -> str:
     """Execute block input (handy for pasting in code)."""
-
     # Print with accent color because we're inputting commands
     print('\001\x1B[%dm\002Ctrl-D to run, Ctrl-C to cancel\001\x1B[%dm\002' % (accent - 2, accent))
     try:
@@ -95,7 +88,6 @@ def ppdict(d):
 
 def display_hook(value: Any) -> None:
     """Clear text formatting continuing from the prompt."""
-    
     sys.stdout.write('\x1b[m')
     sys.__displayhook__(value)
 # Register hook
@@ -103,7 +95,6 @@ sys.displayhook = display_hook
 
 def dynamic_module_import(module_name: str) -> None:
     """Import a module into sys.modules and globals"""
-
     module = importlib.import_module(module_name)
     # Prevent duplicate importing
     sys.modules[module_name] = module
@@ -117,7 +108,6 @@ def exception_hook(exception_type: Exception, value: Exception, traceback: types
     - Attempts to import unimported referenced modules
     - Minimal support for Python 2's print statement
     """
-
     # Make errors red
     # sys.stderr.write('\001\x1b[91m\002')
 

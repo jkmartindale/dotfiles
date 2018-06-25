@@ -14,12 +14,18 @@ accent = 36
 # sys.ps1 = '\001\033[%sm\002>>>\001\033[%sm\002 ' % (accent - 2, accent)
 # sys.ps2 = '\001\033[%sm\002...\001\033[%sm\002 ' % (accent - 2, accent)
 
+##################################################
+# Custom interactive interpreter command framework
+##################################################
+
+class Command(object):
     """A custom command to add to the interactive interpreter.
 
     No constructor arguments are used.
-    
-    This command implementation replaces hooking into `sys.excepthook` and catching `NameErrors`. The old implementation combined with the auto-import code became quite spaghetti, and it only hid `NameErrors` from the user instead of getting rid of them. This meant that if the user executed bad code in `block`, they would see the `NameError` turned up by `block` in addition to the error from their actual code.
     """
+    
+    # List of command names registered by @command
+    registry = []
 
     def __repr__(self) -> str:
         """Used when called as a statement."""
@@ -32,17 +38,37 @@ accent = 36
     def code(self) -> str:
         """Actual command code.
         
-        This is normally set by the @command decorator, though a default implementation is included in case someone tries to make a Command at the interactive interpreter and forgets to set `code()` themselves."""
+        This is normally set by the @command decorator, though a default implementation is included in case someone tries to make a Command at the interactive interpreter and forgets to set `code()` themselves.
+        """
         return 'Set the code attribute to a callable returning a string.'
 
-def command(function: Callable) -> Command:
+def command(function: Callable) -> None:
     """Decorator to convert a function to a Command.
     
     The function name is used as the command name. The function cannot take any arguments and must return a string.
+
+    @command adds these commands to __builtins__ and returns None to protect against accidental execution when calling globals().
     """
-    bootstrap = Command()
-    bootstrap.code = function
-    return bootstrap
+    command = Command()
+    command.code = function
+    setattr(__builtins__, function.__name__, command)
+    Command.registry.append(function.__name__)
+
+def enable_commands() -> None:
+    """Enables registered commands for usage in the interactive shell.
+
+    The ease of using @command has one trade-off: decorators must set a value in globals(). To prevent accidental execution, @command returns None. However, these names need to be removed from globals() in order for custom commands stored in __builtins__ to work.
+    """
+    for command in Command.registry:
+        try:
+            del globals()[command]
+        except KeyError:
+            # Command has already been removed from globals()
+            pass
+
+######################
+# Define commands here
+######################
 
 @command
 def exit() -> None:
@@ -76,15 +102,15 @@ def block() -> str:
     # Start the next prompt on a new line instead of immediately after ^D or ^C
     return ''
 
-# Stolen from https://github.com/pixelb/scripts/blob/master/scripts/inpy
-def ppdict(d):
-    """Pretty Print for Dicts"""
-    print('{')
-    keys=d.keys()
-    for k in sorted(keys):
-        spacing=" " * (16-(len(repr(k))+1))
-        print("%s:%s%s," % (repr(k),spacing,repr(d[k])))
-    print('}')
+###################################################
+# Enable commands if you want them to actually work
+###################################################
+
+enable_commands()
+
+#############################
+# Display and exception hooks
+#############################
 
 def display_hook(value: Any) -> None:
     """Clear text formatting continuing from the prompt."""
@@ -148,6 +174,20 @@ def exception_hook(exception_type: Exception, value: Exception, traceback: types
     sys.__excepthook__(exception_type, value, traceback)
 # Register hook
 sys.excepthook = exception_hook
+
+################
+# Random garbage
+################
+
+# Stolen from https://github.com/pixelb/scripts/blob/master/scripts/inpy
+def ppdict(d):
+    """Pretty Print for Dicts"""
+    print('{')
+    keys=d.keys()
+    for k in sorted(keys):
+        spacing=" " * (16-(len(repr(k))+1))
+        print("%s:%s%s," % (repr(k),spacing,repr(d[k])))
+    print('}')
 
 def print_r(output: object) -> None:
     for item in output:

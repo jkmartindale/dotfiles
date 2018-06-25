@@ -25,9 +25,11 @@ class Command(object):
     def __repr__(self) -> str:
         """Used when called as a statement."""
         return self.code()
+
     def __call__(self) -> None:
         """Used when called as a function."""
         print(self.__repr__())
+        
     def code(self) -> str:
         """Actual command code.
         

@@ -3,7 +3,8 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # Prompt customization
-export PS1='\[\e[36m\]\u // \W$(branchname) $ \[\e[m\]'
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+export PS1='\[\e[36m\]\u // \W$(__git_ps1) $ \[\e[m\]'
 export PS2='\[\e[36m\]... \[\e[m\]'
 export PS4='\[\e[36m\]+++ \[\e[m\]'
 

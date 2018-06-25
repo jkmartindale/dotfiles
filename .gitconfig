@@ -1,0 +1,7 @@
+[pull]
+	rebase = true
+[user]
+	email = jkmartindale@users.noreply.github.com
+	name = James Martinale
+[core]
+	autocrlf = input

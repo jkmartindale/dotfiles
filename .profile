@@ -26,6 +26,7 @@ alias down='DOWN=`fc -ln -1`;DOWN=${DOWN##* };if [ -d "$DOWN" ];then cd "$DOWN";
 alias finder='open'
 alias forgit='git checkout --'
 alias merge='git merge'
+alias pip='bin/pip'
 alias profile='code ~/Projects/dotfiles/.profile'
 alias push='git push origin'
 alias py='bin/python'

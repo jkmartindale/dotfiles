@@ -40,5 +40,5 @@ alias venv='python3 -m venv .;bin/pip install --upgrade pip'
 alias ll='ls -AFGlh'
 export PYTHONSTARTUP=~/.pythonrc
 
-# I rarely do anything outside of this folder so
-cd ~/Projects
+# cd to Projects if another working directory isn't already set
+if [ $(pwd) = ~ ]; then cd ~/Projects; fi

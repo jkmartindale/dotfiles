@@ -35,7 +35,7 @@ alias rebuild='bin/pip install . --force-reinstall'
 alias reload='source ~/.profile;clear'
 alias status='git status'
 alias up='cd ..'
-alias venv='python3 -m venv .;bin/pip install --upgrade pip'
+alias venv='rm -r lib; python3 -m venv .;bin/pip install --upgrade pip'
 
 # Actual improvements
 alias ll='ls -AFGlh'

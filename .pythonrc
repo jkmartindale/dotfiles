@@ -114,7 +114,7 @@ enable_commands()
 
 def display_hook(value: Any) -> None:
     """Clear text formatting continuing from the prompt."""
-    sys.stdout.write('\001\x1b[m\002')
+    sys.stdout.write('\001\x1b[0m\002')
     sys.__displayhook__(value)
 # Register hook
 sys.displayhook = display_hook

@@ -164,8 +164,6 @@ def exception_hook(exception_type: Exception, value: Exception, traceback: types
     if exception_type is SyntaxError:
         matches = re.match(r"print (.*)\n", value.text)
         if matches is not None:
-            # Clear text formatting leaking from prompt
-            # sys.stdout.write('\001\x1b[m\002')
             # Rewrite print statement to work
             exec('print(' + matches[1] + ')')
             return

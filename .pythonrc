@@ -135,7 +135,7 @@ def exception_hook(exception_type: Exception, value: Exception, traceback: types
     - Minimal support for Python 2's print statement
     """
     # Make errors red
-    # sys.stderr.write('\001\x1b[91m\002')
+    sys.stderr.write('\001\x1b[91m\002')
 
     # Import unimported referenced modules
     if exception_type is NameError:

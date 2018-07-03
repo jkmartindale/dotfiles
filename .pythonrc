@@ -53,6 +53,7 @@ def command(function: Callable) -> None:
     command.code = function
     setattr(__builtins__, function.__name__, command)
     Command.registry.append(function.__name__)
+    return 'Run enable_commands() to enable your commands.'
 
 def enable_commands() -> None:
     """Enables registered commands for usage in the interactive shell.
@@ -106,7 +107,7 @@ def reload() -> str:
 # Enable commands if you want them to actually work
 ###################################################
 
-enable_commands()
+# enable_commands()
 
 #############################
 # Display and exception hooks

@@ -47,7 +47,7 @@ def command(function: Callable) -> None:
     
     The function name is used as the command name. The function cannot take any arguments and must return a string.
 
-    @command adds these commands to __builtins__ and returns None to protect against accidental execution when calling globals().
+    @command adds these commands to __builtins__ and returns a string to protect against accidental execution when calling globals().
     """
     command = Command()
     command.code = function

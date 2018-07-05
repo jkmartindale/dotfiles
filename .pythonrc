@@ -72,14 +72,12 @@ def enable_commands() -> None:
 @command
 def block() -> str:
     """Execute block input, such as pasted code."""
-    # Print with accent color because we're inputting commands
-    print('\001\x1B[%dm\002Ctrl-D to run, Ctrl-C to cancel\001\x1B[%dm\002' % (accent - 2, accent))
+    print('\001\x1B[%dm\002Ctrl-D to run, Ctrl-C to cancel\001\x1B[0dm\002' % accent)
     try:
         # Stolen from https://github.com/pixelb/scripts/blob/master/scripts/inpy
         exec(sys.stdin.read(), globals())
     except KeyboardInterrupt:
-        # Don't output an error if cancelled, and reset the color
-        sys.stderr.write('\001\x1b[0m\002')
+        # Don't output an error if cancelled
         pass
     # Start the next prompt on a new line instead of immediately after ^D or ^C
     return ''
@@ -110,13 +108,6 @@ enable_commands()
 #############################
 # Display and exception hooks
 #############################
-
-def display_hook(value: Any) -> None:
-    """Clear text formatting continuing from the prompt."""
-    sys.stdout.write('\001\x1b[0m\002')
-    sys.__displayhook__(value)
-# Register hook
-sys.displayhook = display_hook
 
 def dynamic_module_import(module_name: str) -> None:
     """Import a module into sys.modules and globals"""

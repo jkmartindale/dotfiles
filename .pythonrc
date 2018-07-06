@@ -164,7 +164,7 @@ def exception_hook(exception_type: Exception, value: Exception, traceback: types
         matches = re.match(r"print (.*)\n", value.text)
         if matches is not None:
             # Rewrite print statement to work
-            exec('print(' + matches[1] + ')')
+            exec('print(%s)' % matches[1])
             return
 
     # Run the default exception handling

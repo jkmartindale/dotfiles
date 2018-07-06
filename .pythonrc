@@ -167,16 +167,10 @@ sys.excepthook = exception_hook
 # Random garbage
 ################
 
-# Stolen from https://github.com/pixelb/scripts/blob/master/scripts/inpy
-def ppdict(d):
-    """Pretty Print for Dicts"""
-    print('{')
-    keys=d.keys()
-    for k in sorted(keys):
-        spacing=" " * (16-(len(repr(k))+1))
-        print("%s:%s%s," % (repr(k),spacing,repr(d[k])))
-    print('}')
-
-def print_r(output: object) -> None:
-    for item in output:
-        print(item)
+# Modified from https://github.com/pixelb/scripts/blob/master/scripts/inpy
+def print_r(subject: dict) -> None:
+    """Pretty-print a dict."""
+    keys = subject.keys()
+    for key in sorted(keys):
+        spacing = " " * (20 - (len(key) + 1))
+        print('\033[%sm%s\033[0m %s%s' % (accent - 2, key, spacing, subject[key]))

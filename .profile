@@ -33,6 +33,7 @@ alias commit='git commit -m'
 alias forgit='git checkout --'
 alias gti='git'
 alias merge='git merge'
+alias pull='git pull'
 alias push='git push origin'
 alias status='git status'
 

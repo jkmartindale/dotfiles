@@ -80,7 +80,7 @@ def enable_commands() -> None:
 @command
 def block() -> str:
     """Execute block input, such as pasted code."""
-    print('\001\x1B[%dm\002Ctrl-D to run, Ctrl-C to cancel\001\x1B[0dm\002' % accent)
+    print('\033[%dmCtrl-D to run, Ctrl-C to cancel\033[0dm' % accent)
     try:
         # Stolen from https://github.com/pixelb/scripts/blob/master/scripts/inpy
         exec(sys.stdin.read(), globals())
@@ -134,7 +134,7 @@ def exception_hook(exception_type: Exception, value: Exception, traceback: types
     - Minimal support for Python 2's print statement
     """
     # Make errors red
-    sys.stderr.write('\001\x1b[91m\002')
+    sys.stderr.write('\033[91m')
 
     # Import unimported referenced modules
     if exception_type is NameError:

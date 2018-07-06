@@ -23,7 +23,14 @@ def print_r(subject: dict) -> None:
             print('\033[%sm%s\033[0m %s%s' % (accent - 2, key, spacing, subject[key]))
     except AttributeError:
         # Subject isn't subscriptable, so access attributes instead
-        for attribute in dir(subject):
+        attributes = dir(subject)
+
+        # Prevent accidental execution of commands
+        if subject.__name__ == 'builtins':
+            for command_name in Command.registry:
+                attributes.remove(command_name)
+        
+        for attribute in attributes:
             spacing = " " * (20 - (len(attribute) + 1))
             print('\033[%sm%s\033[0m %s%s' % (accent - 2, attribute, spacing, repr(getattr(subject, attribute))))
 

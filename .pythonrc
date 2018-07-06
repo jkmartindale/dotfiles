@@ -8,7 +8,7 @@ import types
 from typing import Any, Callable, Tuple
 
 # Accent color used for prompts and stuff
-accent = 36
+accent = 34
 
 # Make prompts blue to make them easier to find in a sea of text
 sys.ps1 = '\001\033[%sm\002>>>\001\033[0m\002 ' % accent

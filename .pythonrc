@@ -14,9 +14,17 @@ accent = 34
 sys.ps1 = '\001\033[%sm\002>>>\001\033[0m\002 ' % accent
 sys.ps2 = '\001\033[%sm\002...\001\033[0m\002 ' % accent
 
-##################################################
-# Custom interactive interpreter command framework
-##################################################
+# Modified from https://github.com/pixelb/scripts/blob/master/scripts/inpy
+def print_r(subject: dict) -> None:
+    """Pretty-print a dict."""
+    keys = subject.keys()
+    for key in sorted(keys):
+        spacing = " " * (20 - (len(key) + 1))
+        print('\033[%sm%s\033[0m %s%s' % (accent - 2, key, spacing, subject[key]))
+
+##########################
+# Custom command framework
+##########################
 
 class Command(object):
     """A custom command to add to the interactive interpreter.
@@ -65,9 +73,9 @@ def enable_commands() -> None:
             # Command has already been removed from globals()
             pass
 
-######################
-# Define commands here
-######################
+#################
+# Define commands
+#################
 
 @command
 def block() -> str:
@@ -106,9 +114,9 @@ def reload() -> str:
 
 enable_commands()
 
-#############################
-# Display and exception hooks
-#############################
+################
+# Exceptiom hook
+################
 
 def dynamic_import(module_name: str) -> None:
     """Import a module into sys.modules and globals"""
@@ -163,15 +171,3 @@ def exception_hook(exception_type: Exception, value: Exception, traceback: types
     sys.__excepthook__(exception_type, value, traceback)
 # Register hook
 sys.excepthook = exception_hook
-
-################
-# Random garbage
-################
-
-# Modified from https://github.com/pixelb/scripts/blob/master/scripts/inpy
-def print_r(subject: dict) -> None:
-    """Pretty-print a dict."""
-    keys = subject.keys()
-    for key in sorted(keys):
-        spacing = " " * (20 - (len(key) + 1))
-        print('\033[%sm%s\033[0m %s%s' % (accent - 2, key, spacing, subject[key]))

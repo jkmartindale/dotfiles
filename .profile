@@ -44,3 +44,6 @@ alias py='bin/python'
 alias pyrc='code ~/.pythonrc'
 alias rebuild='bin/pip install . --force-reinstall'
 alias venv='rm -r lib; python3 -m venv .;bin/pip install --upgrade pip'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

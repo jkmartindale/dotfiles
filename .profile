@@ -4,9 +4,9 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # Prompt customization
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
-export PS1='\[\e[36m\]\u // \W$(__git_ps1) $ \[\e[m\]'
-export PS2='\[\e[36m\]... \[\e[m\]'
-export PS4='\[\e[36m\]+++ \[\e[m\]'
+export PS1='\[\e[34m\]\u // \W$(__git_ps1) $ \[\e[m\]'
+export PS2='\[\e[34m\]... \[\e[m\]'
+export PS4='\[\e[34m\]+++ \[\e[m\]'
 
 # cd to Projects if another working directory isn't already set
 if [ $(pwd) = ~ ]; then cd ~/Projects; fi

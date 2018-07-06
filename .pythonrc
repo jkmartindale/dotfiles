@@ -17,10 +17,15 @@ sys.ps2 = '\001\033[%sm\002...\001\033[0m\002 ' % accent
 # Modified from https://github.com/pixelb/scripts/blob/master/scripts/inpy
 def print_r(subject: dict) -> None:
     """Pretty-print a dict."""
-    keys = subject.keys()
-    for key in sorted(keys):
-        spacing = " " * (20 - (len(key) + 1))
-        print('\033[%sm%s\033[0m %s%s' % (accent - 2, key, spacing, subject[key]))
+    try:
+        for key in sorted(subject.keys()):
+            spacing = " " * (20 - (len(key) + 1))
+            print('\033[%sm%s\033[0m %s%s' % (accent - 2, key, spacing, subject[key]))
+    except AttributeError:
+        # Subject isn't subscriptable, so access attributes instead
+        for attribute in dir(subject):
+            spacing = " " * (20 - (len(attribute) + 1))
+            print('\033[%sm%s\033[0m %s%s' % (accent - 2, attribute, spacing, repr(getattr(subject, attribute))))
 
 ##########################
 # Custom command framework

@@ -109,7 +109,7 @@ enable_commands()
 # Display and exception hooks
 #############################
 
-def dynamic_module_import(module_name: str) -> None:
+def dynamic_import(module_name: str) -> None:
     """Import a module into sys.modules and globals"""
     module = importlib.import_module(module_name)
     # Prevent duplicate importing
@@ -131,8 +131,8 @@ def exception_hook(exception_type: Exception, value: Exception, traceback: types
     if exception_type is NameError:
         name = re.match(r"name '(\w+)' is not defined", value.args[0])[1]
         try:
-            dynamic_module_import(name)
-            # Keep print call outside of dynamic_module_import() in case others want to use it
+            dynamic_import(name)
+            # Keep print call outside of dynamic_import() in case others want to use it
             print(name + ' imported, try again.')
             # Silence message
             return
@@ -142,8 +142,8 @@ def exception_hook(exception_type: Exception, value: Exception, traceback: types
         try:
             split = re.match(r"module '([\w.]+)' has no attribute '(\w+)'", value.args[0])
             module_name = split[1] + '.' + split[2]
-            dynamic_module_import(module_name)
-            # Keep print call outside of dynamic_module_import() in case others want to use it
+            dynamic_import(module_name)
+            # Keep print call outside of dynamic_import() in case others want to use it
             print(module_name + ' imported, try again.')
             # Silence message
             return

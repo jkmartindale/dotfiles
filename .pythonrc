@@ -92,7 +92,8 @@ def exit() -> None:
 def reload() -> str:
     """Reload the PYTHONSTARTUP file without exiting and re-entering the interactive interpreter."""
     try:
-        exec(open(os.environ['PYTHONSTARTUP']).read(), globals())
+        with open(os.environ['PYTHONSTARTUP']) as profile:
+            exec(profile.read(), globals())
     except FileNotFoundError:
         return "Couldn't find the file '%s'" % os.environ['PYTHONSTARTUP']
     except KeyError:

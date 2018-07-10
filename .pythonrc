@@ -114,7 +114,7 @@ def pyrc() -> str:
     if 'PYTHONSTARTUP' not in os.environ:
         return "The PYTHONSTARTUP environment variable hasn't been set."
     
-    return os.system('${%s:-vim} $PYTHONSTARTUP' % 'VISUAL' if 'VISUAL' in os.environ else 'EDITOR')
+    return os.system('${%s:-vim} $PYTHONSTARTUP' % ('VISUAL' if 'VISUAL' in os.environ else 'EDITOR'))
 
 @command
 def reload() -> str:

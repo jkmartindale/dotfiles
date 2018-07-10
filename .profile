@@ -4,9 +4,6 @@ export PS1='\[\e[34m\]\u // \W$(__git_ps1) $ \[\e[m\]'
 export PS2='\[\e[34m\]... \[\e[m\]'
 export PS4='\[\e[34m\]+++ \[\e[m\]'
 
-# cd to Projects if another working directory isn't already set
-if [ $(pwd) = ~ ]; then cd ~/Projects; fi
-
 # Bash
 alias down='DOWN=`fc -ln -1`;DOWN=${DOWN##* };if [ -d "$DOWN" ];then cd "$DOWN";else cd `ls -td {.[^.],}?*/ 2>/dev/null|head -1`;fi'
 alias exity='exit'
@@ -42,3 +39,10 @@ alias py='bin/python'
 alias pyrc='code ~/.pythonrc'
 alias rebuild='bin/pip install . --force-reinstall'
 alias venv='rm -r lib; python3 -m venv .;bin/pip install --upgrade pip'
+
+# NTI
+alias dataserver='~/Projects/nti.dataserver-buildout/bin/supervisord -n'
+alias webserver='cd ~/Projects/nti.web.app;npm start'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+if [ $(pwd) = ~ ]; then cd ~/Projects; fi

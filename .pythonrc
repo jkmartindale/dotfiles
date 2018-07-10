@@ -20,7 +20,7 @@ def print_r(subject: dict) -> None:
     try:
         for key in sorted(subject.keys()):
             spacing = " " * (20 - (len(key) + 1))
-            print('\033[%sm%s\033[0m %s%s' % (accent - 2, key, spacing, subject[key]))
+            print('\001\033[%sm\002%s\001\033[0m\002 %s%s' % (accent - 2, key, spacing, subject[key]))
     except AttributeError:
         # Subject isn't subscriptable, so access attributes instead
         attributes = dir(subject)
@@ -32,7 +32,7 @@ def print_r(subject: dict) -> None:
         
         for attribute in attributes:
             spacing = " " * (20 - (len(attribute) + 1))
-            print('\033[%sm%s\033[0m %s%s' % (accent - 2, attribute, spacing, repr(getattr(subject, attribute))))
+            print('\001\033[%s\002m%s\001\033[0m\002 %s%s' % (accent - 2, attribute, spacing, repr(getattr(subject, attribute))))
 
 ##########################
 # Custom command framework
@@ -92,7 +92,7 @@ def enable_commands() -> None:
 @command
 def block() -> str:
     """Execute block input, such as pasted code."""
-    print('\033[%dmCtrl-D to run, Ctrl-C to cancel\033[0dm' % accent)
+    print('\001\033[%dm\002Ctrl-D to run, Ctrl-C to cancel\001\033[0dm\002' % accent)
     try:
         # Stolen from https://github.com/pixelb/scripts/blob/master/scripts/inpy
         exec(sys.stdin.read(), globals())
@@ -146,7 +146,7 @@ def exception_hook(exception_type: Exception, value: Exception, traceback: types
     - Minimal support for Python 2's print statement
     """
     # Make errors red
-    sys.stderr.write('\033[91m')
+    sys.stderr.write('\001\033[91m\002')
 
     # Import unimported referenced modules
     if exception_type is NameError:

@@ -36,6 +36,7 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Python
 export PYTHONSTARTUP=~/.pythonrc
 alias build='bin/pip install .'
+alias pipstall='bin/pip install'
 alias py='bin/python'
 alias pyrc='code ~/.pythonrc'
 alias rebuild='bin/pip install . --force-reinstall'

@@ -14,7 +14,6 @@ if [ $(pwd) = ~ ]; then cd ~/Projects; fi
 # Bash
 alias down='DOWN=`fc -ln -1`;DOWN=${DOWN##* };if [ -d "$DOWN" ];then cd "$DOWN";else cd `ls -td {.[^.],}?*/ 2>/dev/null|head -1`;fi'
 alias exity='exit'
-alias finder='open'
 alias ll='ls -AFGlh'
 eval "$(thefuck --alias please)"
 alias pls='please'

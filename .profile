@@ -1,4 +1,4 @@
-export VISUAL=code
+export VISUAL='code'
 
 # Prompt customization
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh

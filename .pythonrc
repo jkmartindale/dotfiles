@@ -92,7 +92,7 @@ def enable_commands() -> None:
 @command
 def block() -> str:
     """Execute block input, such as pasted code."""
-    print('\001\033[%dm\002Ctrl-D to run, Ctrl-C to cancel\001\033[0dm\002' % accent)
+    print('\001\033[%dm\002Ctrl-D to run, Ctrl-C to cancel\001\033[0m\002' % accent)
     try:
         # Stolen from https://github.com/pixelb/scripts/blob/master/scripts/inpy
         exec(sys.stdin.read(), globals())

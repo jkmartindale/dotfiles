@@ -27,7 +27,7 @@ def print_r(subject: dict) -> None:
         
         for attribute in attributes:
             spacing = " " * (20 - (len(attribute) + 1))
-            print('\001\033[%s\002m%s\001\033[0m\002 %s%s' % (accent - 2, attribute, spacing, repr(getattr(subject, attribute))))
+            print('\001\033[%sm\002%s\001\033[0m\002 %s%s' % (accent - 2, attribute, spacing, repr(getattr(subject, attribute))))
 
 ##########################
 # Custom command framework

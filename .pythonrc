@@ -109,6 +109,14 @@ def exit() -> None:
     raise SystemExit
 
 @command
+def pyrc() -> str:
+    """Open the PYTHONSTARTUP file in the preferred editor."""
+    if 'PYTHONSTARTUP' not in os.environ:
+        return "The PYTHONSTARTUP environment variable hasn't been set."
+    
+    return os.system('${%s:-vim} $PYTHONSTARTUP' % 'VISUAL' if 'VISUAL' in os.environ else 'EDITOR')
+
+@command
 def reload() -> str:
     """Reload the PYTHONSTARTUP file without exiting and re-entering the interactive interpreter."""
     try:

@@ -1,7 +1,3 @@
-# MacPorts Installer addition on 2018-05-15_at_10:00:32: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-
 # Prompt customization
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 export PS1='\[\e[34m\]\u // \W$(__git_ps1) $ \[\e[m\]'
@@ -35,6 +31,9 @@ alias merge='git merge'
 alias pull='git pull'
 alias push='git push origin'
 alias status='git status'
+
+# MacPorts
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # Python
 export PYTHONSTARTUP=~/.pythonrc

@@ -109,7 +109,9 @@ def pyrc() -> str:
     if 'PYTHONSTARTUP' not in os.environ:
         return "The PYTHONSTARTUP environment variable hasn't been set."
     
-    if os.system('${%s:-vim} $PYTHONSTARTUP' % ('VISUAL' if 'VISUAL' in os.environ else 'EDITOR')) == 0:
+    #XXX: VS Code doesn't play nice with git rebase so the editor will be harcoded for now
+    # if os.system('${%s:-vim} $PYTHONSTARTUP' % ('VISUAL' if 'VISUAL' in os.environ else 'EDITOR')) == 0:
+    if os.system('code $PYTHONSTARTUP') == 0:
         return 'PYTHONSTARTUP opened in editor.'
     return 'Something happened.'
 

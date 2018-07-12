@@ -1,3 +1,5 @@
+export EDITOR='code --wait'
+
 # Prompt customization
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 export PS1='\[\e[34m\]\u // \W$(__git_ps1) $ \[\e[m\]'

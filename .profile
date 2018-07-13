@@ -41,7 +41,6 @@ alias build='bin/pip install .'
 alias pipstall='bin/pip install'
 alias py='bin/python'
 alias pyrc='code ~/.pythonrc'
-alias rebuild='bin/pip install . --force-reinstall'
 alias venv='rm -r lib; python3 -m venv .;bin/pip install --upgrade pip'
 
 # NTI

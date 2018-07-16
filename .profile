@@ -1,4 +1,4 @@
-export EDITOR='code'
+export EDITOR='code --wait'
 
 # Prompt customization
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh

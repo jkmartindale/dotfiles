@@ -55,6 +55,7 @@ class command(object):
             # I know this is some sort of recursive hell, but it allows me to reuse the same class as a decorator so shhhhhh
             new_command = command()
             new_command.code = function
+            new_command.__doc__ = function.__doc__
             setattr(__builtins__, function.__name__, new_command)
             command.registry.append(function.__name__)
 

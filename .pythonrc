@@ -33,52 +33,52 @@ def print_r(subject: dict) -> None:
 # Custom command framework
 ##########################
 
-class Command(object):
-    """A custom command to add to the interactive interpreter.
-
-    No constructor arguments are used.
+class command(object):
+    """Decorator converting a function to a custom interactive interpreter command.
+    
+    The function name is used as the command name. The function cannot take any arguments and must return a string.
     """
     
     # List of command names registered by @command
     registry = []
 
-    def __repr__(self) -> str:
-        """Return a string when called as a statement."""
-        return self.code()
-
     def __call__(self) -> None:
         """Print output when called as a function."""
         print(self.__repr__())
 
+    def __init__(self, function: Callable = None):
+        """Add a command to `__builtins__` (to prevent execution when calling `globals()`).
+        
+        `command.enable()` must be called before commands can be used.
+        """
+        if function:
+            # I know this is some sort of recursive hell, but it allows me to reuse the same class as a decorator so shhhhhh
+            new_command = command()
+            new_command.code = function
+            setattr(__builtins__, function.__name__, new_command)
+            command.registry.append(function.__name__)
+
+    def __repr__(self) -> str:
+        """Return a string when called as a statement."""
+        return self.code()
+
     def code(self) -> str:
-        """Actual command code, typically set by @command."""
-        # In case someone tries to make a Command from the interactive interpreter but forgets to set the code attribute
-        return 'Set the code attribute to a callable returning a string.'
-
-def command(function: Callable) -> None:
-    """Convert a function to a Command.
+        """Command code set by @command."""
+        # Default message for the command object stored in `globals()`
+        return 'Run command.enable() to enable your commands.'
     
-    The function name is used as the command name. The function cannot take any arguments and must return a string.
+    @classmethod
+    def enable(cls) -> None:
+        """Enable registered commands for use in the interactive shell.
 
-    This function adds commands to __builtins__ and returns a string to protect against accidental execution when calling globals().
-    """
-    command = Command()
-    command.code = function
-    setattr(__builtins__, function.__name__, command)
-    Command.registry.append(function.__name__)
-    return 'Run enable_commands() to enable your commands.'
-
-def enable_commands() -> None:
-    """Enable registered commands for usage in the interactive shell.
-
-    The ease of using @command has one trade-off: decorators must store a value in globals(). To prevent accidental execution, @command returns a string. However, the command names in globals() override the names in __builtins__, so this function removes them from globals().
-    """
-    for command in Command.registry:
-        try:
-            del globals()[command]
-        except KeyError:
-            # Command has already been removed from globals()
-            pass
+        The ease of using @command has one trade-off: decorators must store a value in globals(). To prevent accidental execution, @command returns a string. However, the command names in globals() override the names in __builtins__, so this function removes them from globals().
+        """
+        for command_name in command.registry:
+            try:
+                del globals()[command_name]
+            except KeyError:
+                # Command has already been removed from globals()
+                pass
 
 #################
 # Define commands
@@ -129,7 +129,7 @@ def reload() -> str:
 # Enable commands if you want them to actually work
 ###################################################
 
-enable_commands()
+command.enable()
 
 ################
 # Exceptiom hook

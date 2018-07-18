@@ -18,6 +18,9 @@ accent = 34
 sys.ps1 = '\001\033[%sm\002>>>\001\033[0m\002 ' % accent
 sys.ps2 = '\001\033[%sm\002...\001\033[0m\002 ' % accent
 
+# Don't make interactive interpreter wait on VS Code
+os.environ['VISUAL'] = 'code'
+
 ###################
 # Utility Functions
 ###################

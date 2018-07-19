@@ -32,7 +32,8 @@ alias push='git push origin'
 alias revert='git revert'
 alias status='git status'
 
-# MacPorts
+# macOS
+alias dnsflush='sudo killall -HUP mDNSResponder'
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # Python

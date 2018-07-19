@@ -98,15 +98,16 @@ class command(object):
 
 @command
 def block() -> str:
-    """Execute block input, such as pasted code."""
+    """Execute block input, such as pasted code.
+    
+    This command does not act as a REPL, and values will have to be explicitly printed.
+    """
     print('\001\033[%dm\002Ctrl-D to run, Ctrl-C to cancel\001\033[0m\002' % accent)
     try:
-        # Stolen from https://github.com/pixelb/scripts/blob/master/scripts/inpy
-        exec('\n'.join(line.lstrip(' >.') for line in sys.stdin.readlines()), globals())
+        repr(exec('\n'.join([line[4:] if line.startswith('>>> ') or line.startswith('... ') else line for line in sys.stdin.readlines()]), globals()))
     except KeyboardInterrupt:
         # Don't output an error if cancelled
         pass
-    # Start the next prompt on a new line instead of immediately after ^D or ^C
     return ''
 
 @command

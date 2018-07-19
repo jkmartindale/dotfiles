@@ -104,7 +104,7 @@ def block() -> str:
     """
     print('\001\033[%dm\002Ctrl-D to run, Ctrl-C to cancel\001\033[0m\002' % accent)
     try:
-        repr(exec('\n'.join([line[4:] if line.startswith('>>> ') or line.startswith('... ') else line for line in sys.stdin.readlines()]), globals()))
+        exec('\n'.join([line[4:] if line.startswith('>>> ') or line.startswith('... ') else line for line in sys.stdin.readlines()]), globals())
     except KeyboardInterrupt:
         # Don't output an error if cancelled
         pass

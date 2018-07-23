@@ -2,6 +2,9 @@ export EDITOR='code --wait'
 
 # Prompt customization
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE='ye'
+export GIT_PS1_SHOWSTASHSTATE='pls'
+export GIT_PS1_SHOWUPSTREAM='ya'
 export PS1='\[\e[34m\]\u // \W$(__git_ps1) $ \[\e[m\]'
 export PS2='\[\e[34m\]... \[\e[m\]'
 export PS4='\[\e[34m\]+++ \[\e[m\]'
@@ -37,12 +40,19 @@ alias dnsflush='sudo killall -HUP mDNSResponder'
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # Python
-export PYTHONSTARTUP=~/.pythonrc
 alias build='bin/pip install -e .'
 alias pipstall='bin/pip install'
 alias py='bin/python'
 alias pyrc='code ~/.pythonrc'
 alias venv='rm -r lib; python3 -m venv .;bin/pip install --upgrade pip'
+export PYTHONSTARTUP=~/.pythonrc
+_pip_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                   COMP_CWORD=$COMP_CWORD \
+                   PIP_AUTO_COMPLETE=1 $1 ) )
+}
+complete -o default -F _pip_completion pip
 
 # NTI
 alias dataserver='~/Projects/nti.dataserver-buildout/bin/supervisord -n'

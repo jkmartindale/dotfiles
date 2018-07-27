@@ -25,6 +25,9 @@ os.environ['VISUAL'] = 'code'
 # Utility Functions
 ###################
 
+# Sprak habits leak into Python sometimes
+Print = print
+
 # Modified from https://github.com/pixelb/scripts/blob/master/scripts/inpy
 def print_r(subject: dict) -> None:
     """Pretty-print a dict."""

@@ -25,7 +25,9 @@ alias up='cd ..'
 alias add='git add'
 alias branch='git checkout -b'
 alias checkout='git checkout'
-alias clone='git clone'
+function clone {
+    git clone git@github.com:$1/$2
+}
 alias commit='git commit -m'
 alias forgit='git checkout --'
 alias gti='git'
@@ -57,6 +59,10 @@ complete -o default -F _pip_completion pip
 # NTI
 alias dataserver='~/Projects/nti.dataserver-buildout/bin/supervisord -n'
 alias webserver='cd ~/Projects/nti.web.app;npm start'
+export CPPFLAGS=-I/opt/local/include
+export LDFLAGS=-L/opt/local/lib
+export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+export VIRTUAL_ENV=/opt/local
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 if [ $(pwd) = ~ ]; then cd ~/Projects; fi

@@ -20,6 +20,12 @@ module.exports = {
     // font weight for bold characters: 'normal' or 'bold'
     fontWeightBold: 'bold',
 
+    // line height as a relative unit
+    lineHeight: 1,
+
+    // letter spacing as a relative unit
+    letterSpacing: 0,
+
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
 
@@ -107,7 +113,7 @@ module.exports = {
     env: {},
 
     // set to `false` for no bell
-    bell: false,
+    bell: 'SOUND',
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: true,
@@ -119,10 +125,25 @@ module.exports = {
     // selection is present (`true` by default on Windows and disables the context menu feature)
     quickEdit: true,
 
+    // choose either `'vertical'`, if you want the column mode when Option key is hold during selection (Default)
+    // or `'force'`, if you want to force selection regardless of whether the terminal is in mouse events mode
+    // (inside tmux or vim with mouse mode enabled for example).
+    macOptionSelectionMode: 'vertical',
+
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
 
+    // Whether to use the WebGL renderer. Set it to false to use canvas-based
+    // rendering (slower, but supports transparent backgrounds)
+    webGLRenderer: true,
+
     // for advanced config flags please refer to https://hyper.is/#cfg
+    
+    hyperTabs: {
+      tabIcons: true,
+      tabIconsColored: true,
+      trafficButtons: true
+    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -131,14 +152,8 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["verminal", "hypercwd", "hyper-search"],
-
-  hyperTabs: {
-    border: true,
-    closeAlign: 'left',
-    tabIcons: false,
-    trafficButtons: true
-  },
+  plugins: [// "hyper-active-tab",
+  "verminal", "hyper-quit", "hyper-pane", "hypercwd", "hyper-search", "hyper-tabs-enhanced", "hyper-statusline", "gitrocket", "hyperterm-tabs", "hyper-custom-touchbar"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -148,7 +163,5 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-    "editor:moveBeginningLine": "home",
-    "editor:moveEndLine": "end"
   },
 };

@@ -12,10 +12,9 @@ export PS4='\[\e[34m\]+++ \[\e[m\]'
 # Bash
 alias down='DOWN=`fc -ln -1`;DOWN=${DOWN##* };if [ -d "$DOWN" ];then cd "$DOWN";else cd `ls -td {.[^.],}?*/ 2>/dev/null|head -1`;fi'
 alias exity='exit'
-alias ll='ls -AFGlh'
+alias ll='gls --almost-all --classify --color --group-directories-first --human-readable -l --no-group --si'
 eval "$(thefuck --alias please)"
 alias pls='please'
-alias profile='code ~/Projects/dotfiles/.profile'
 alias relaod='reload'
 alias reload='source ~/.profile;clear'
 alias uo='up'
@@ -26,7 +25,7 @@ alias add='git add'
 alias branch='git checkout -b'
 alias checkout='git checkout'
 function clone {
-    git clone git@github.com:$1/$2
+    git clone git@github.com:$1/$2 "${@:3}"
 }
 alias commit='git commit -m'
 alias forgit='git checkout --'
@@ -36,10 +35,6 @@ alias pull='git pull'
 alias push='git push origin'
 alias revert='git revert'
 alias status='git status'
-
-# macOS
-alias dnsflush='sudo killall -HUP mDNSResponder'
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # Python
 alias build='bin/pip install -e .'
@@ -56,13 +51,7 @@ _pip_completion()
 }
 complete -o default -F _pip_completion pip
 
-# NTI
-alias dataserver='~/Projects/nti.dataserver-buildout/bin/supervisord -n'
-alias webserver='cd ~/Projects/nti.web.app;npm start'
-export CPPFLAGS=-I/opt/local/include
-export LDFLAGS=-L/opt/local/lib
-export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
-export VIRTUAL_ENV=/opt/local
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-if [ $(pwd) = ~ ]; then cd ~/Projects; fi
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+if [ $(pwd) = ~ ]; then cd ~/Desktop; fi

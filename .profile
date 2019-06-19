@@ -38,6 +38,9 @@ alias push='git push origin'
 alias revert='git revert'
 alias status='git status'
 
+# macOS
+alias thunk='osascript -e beep'
+
 # Python
 alias build='bin/pip install -e .'
 alias pipstall='bin/pip install'

@@ -10,6 +10,7 @@ export PS2='\[\e[34m\]... \[\e[m\]'
 export PS4='\[\e[34m\]+++ \[\e[m\]'
 
 # Bash
+alias cls='echo -ne \"\033c\"' # Fix `clear` in macOS Hyper, probably other platforms https://www.reddit.com/r/bashonubuntuonwindows/comments/8szhn0/how_to_clear_terminal_screen_for_real/e1kr97w
 alias down='DOWN=`fc -ln -1`;DOWN=${DOWN##* };if [ -d "$DOWN" ];then cd "$DOWN";else cd `ls -td {.[^.],}?*/ 2>/dev/null|head -1`;fi'
 alias exity='exit'
 alias ll='gls --almost-all --classify --color --group-directories-first --human-readable -l --no-group --si'

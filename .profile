@@ -15,6 +15,7 @@ alias exity='exit'
 alias ll='gls --almost-all --classify --color --group-directories-first --human-readable -l --no-group --si'
 eval "$(thefuck --alias please)"
 alias pls='please'
+alias profile='$EDITOR ~/.profile'
 alias relaod='reload'
 alias reload='source ~/.profile;clear'
 alias uo='up'
@@ -53,5 +54,8 @@ complete -o default -F _pip_completion pip
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Tailwind
+source $HOME/.tw/tw-bash-completion.sh
 
 if [ $(pwd) = ~ ]; then cd ~/Desktop; fi

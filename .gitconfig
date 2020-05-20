@@ -6,7 +6,7 @@
     autocrlf = input
     editor = code --wait
 [user]
-    email = jkmartindale@users.noreply.github.com
+    email = 11380394+jkmartindale@users.noreply.github.com
     name = James Martindale
 [pull]
     rebase = true

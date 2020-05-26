@@ -1,0 +1,5 @@
+# vim: syntax=gitconfig
+
+[core]
+	sshCommand = \"C:/Windows/System32/OpenSSH/ssh.exe\"
+  

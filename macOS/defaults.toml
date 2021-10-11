@@ -1,0 +1,45 @@
+["Apple Global Domain"]
+AppleICUForce24HourTime = true
+AppleInterfaceStyle = "Dark"
+AppleScrollerPagingBehavior = true # Jump to spot clicked in scroll bar
+AppleShowAllExtensions = true
+NSAutomaticCapitalizationEnabled = false
+NSAutomaticPeriodSubstitutionEnabled = false # No more double space for period
+NSNavPanelExpandedStateForSaveMode = true # Expand save dialog by default
+PMPrintingExpandedStateForPrint = true # Expand the print dialog by default
+
+["com.apple.AppStore"]
+InAppReviewEnabled = false
+
+["com.apple.dock"] # killall Dock
+enable-spring-load-actions-on-all-items = true # Drag file over Dock item to open the app
+expose-group-apps = false
+mineffect = "suck"
+minimize-to-application = true
+mru-spaces = false # Don't rearrange Spaces based on use
+show-recents = false
+
+["com.apple.finder"] # killall Finder
+AppleShowAllFiles = true
+FXDefaultSearchScope = "SCcf" # Default search scope to current folder
+FXEnableExtensionChangeWarning = false
+FXPreferredViewStyle = "Nlsv" # Prefer list view
+NSDocumentSaveNewDocumentsToCloud = false
+ShowPathbar = true # Show breadcrumbs at the bottom
+
+["com.apple.menuextra.clock"] # killall SystemUIServer
+DateFormat = "\"EEE d MMM H:mm\""
+FlashDateSeparators = true
+
+["com.apple.screensaver"]
+askForPassword = true # Ask for password after sleep/screen saver
+
+["/Library/Preferences/com.apple.commerce"]
+AutoUpdate = true
+
+["/Library/Preferences/com.apple.SoftwareUpdate"]
+AutomaticCheckEnabled = true
+AutomaticDownload = true
+AutomaticallyInstallMacOSUpdates = true
+ConfigDataInstall = true
+CriticalUpdateInstall = true

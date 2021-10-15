@@ -1,14 +1,18 @@
 [base]
-homebrew = [
+brew = [
     "1password",
     "appcleaner",
     "alt-tab",
+    "brew install homebrew/cask-fonts/font-caskaydia-cove-nerd-font", # for starship
+    "fish",
+    "git",
     "google-chrome",
     "homebrew/cask-drivers/logitech-g-hub",
     "iterm2",
     "microsoft-office",
     "python",
     "scroll-reverser",
+    "starship",
     "spotify",
     "telegram",
     "tiles",
@@ -16,18 +20,22 @@ homebrew = [
 ]
 
 [work]
-homebrew = [
+brew = [
     "bitwarden",
     "burp-suite-professional",
     "checkra1n",
     "db-browser-for-sqlite",
+    "ideviceinstaller",
     "macfuse",
     "meetingbar",
     "microsoft-edge",
     "microsoft-teams",
     "mongodb-realm-studio",
     "openvpn-connect",
+    "oracle-jdk",
+    "podman",
     "gromgit/fuse/sshfs-mac",
+    "wkhtmltopdf", # for MobSF
 ]
 mas = [
     497799835, # Xcode

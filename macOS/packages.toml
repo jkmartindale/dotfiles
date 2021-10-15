@@ -1,0 +1,36 @@
+[base]
+homebrew = [
+    "1password",
+    "appcleaner",
+    "alt-tab",
+    "google-chrome",
+    "hyper",
+    "microsoft-office",
+    "scroll-reverser",
+    "spotify",
+    "telegram",
+    "tiles",
+    "visual-studio-code",
+]
+
+[work]
+homebrew = [
+    "bitwarden",
+    "burp-suite-professional",
+    "checkra1n",
+    "db-browser-for-sqlite",
+    "macfuse",
+    "meetingbar"
+    "microsoft-edge",
+    "microsoft-teams",
+    "mongodb-realm-studio",
+    "openvpn-connect",
+    "gromgit/fuse/sshfs-mac",
+]
+mas = [
+    497799835, # Xcode
+    1497506650, # Yubico Authenticator
+]
+npm = [
+    "igf"
+]

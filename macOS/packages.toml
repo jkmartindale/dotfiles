@@ -4,9 +4,10 @@ homebrew = [
     "appcleaner",
     "alt-tab",
     "google-chrome",
-    "hyper",
     "homebrew/cask-drivers/logitech-g-hub",
+    "iterm2",
     "microsoft-office",
+    "python",
     "scroll-reverser",
     "spotify",
     "telegram",
@@ -21,7 +22,7 @@ homebrew = [
     "checkra1n",
     "db-browser-for-sqlite",
     "macfuse",
-    "meetingbar"
+    "meetingbar",
     "microsoft-edge",
     "microsoft-teams",
     "mongodb-realm-studio",
@@ -33,5 +34,9 @@ mas = [
     1497506650, # Yubico Authenticator
 ]
 npm = [
-    "igf"
+    "igf",
+]
+pip = [
+    "frida-tools",
+    "objection",
 ]

@@ -5,6 +5,7 @@ homebrew = [
     "alt-tab",
     "google-chrome",
     "hyper",
+    "homebrew/cask-drivers/logitech-g-hub",
     "microsoft-office",
     "scroll-reverser",
     "spotify",

@@ -1,16 +1,19 @@
-
 ["Apple Global Domain"]
 AppleICUForce24HourTime = true
-AppleInterfaceStyle = "Dark"
 AppleScrollerPagingBehavior = true # Jump to spot clicked in scroll bar
 AppleShowAllExtensions = true
 NSAutomaticCapitalizationEnabled = false
 NSAutomaticPeriodSubstitutionEnabled = false # No more double space for period
+NSAutomaticQuoteSubstitutionEnabled = false
+NSAutomaticSpellingCorrectionEnabled = false
 NSNavPanelExpandedStateForSaveMode = true # Expand save dialog by default
 PMPrintingExpandedStateForPrint = true # Expand the print dialog by default
 
 ["com.apple.AppStore"]
 InAppReviewEnabled = false
+
+["/Library/Preferences/com.apple.commerce"]
+AutoUpdate = true
 
 ["com.apple.dock"] # killall Dock
 enable-spring-load-actions-on-all-items = true # Drag file over Dock item to open the app
@@ -37,12 +40,39 @@ FlashDateSeparators = true
 ["com.apple.screensaver"]
 askForPassword = true # Ask for password after sleep/screen saver
 
-["/Library/Preferences/com.apple.commerce"]
-AutoUpdate = true
-
 ["/Library/Preferences/com.apple.SoftwareUpdate"]
 AutomaticCheckEnabled = true
 AutomaticDownload = true
 AutomaticallyInstallMacOSUpdates = true
 ConfigDataInstall = true
 CriticalUpdateInstall = true
+
+["com.sempliva.Tiles"]
+LaunchAtLoginEnabled = true
+MenuBarIconEnabled = false
+
+["com.sempliva.Tiles".ActiveEdges]
+ActiveEdgeBottom = "centerThird"
+ActiveEdgeLeft = "halfLeft"
+ActiveEdgeLowerLeft = "quarterBottomLeft"
+ActiveEdgeLowerRight = "quarterBottomRight"
+ActiveEdgeRight = "halfRight"
+ActiveEdgeTop = "fullscreen"
+ActiveEdgeUpperLeft = "quarterTopLeft"
+ActiveEdgeUpperRight = "quarterTopRight"
+
+["com.lwouis.alt-tab-macos"]
+menubarIcon = 3
+SUAutomaticallyUpdate = true
+SUEnableAutomaticChecks = true
+
+["net.freemacsoft.appcleaner"]
+ProtectDefaultApps = false
+ProtectOpenedApps = false
+SUEnableAutomaticChecks = true
+
+["com.pilotmoon.scroll-reverser"]
+HideIcon = true
+InvertScrollingOn = true
+ReverseTrackpad = false
+StartAtLogin = true

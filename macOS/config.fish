@@ -1,7 +1,14 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-    set -x LC_ALL en_US.UTF-8
     starship init fish | source
-end
 
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+    # Homebrew
+    if test -d (brew --prefix)"/share/fish/completions"
+        set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
+    end
+    if test -d (brew --prefix)"/share/fish/vendor_completions.d"
+        set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
+    end
+
+    # iTerm 2
+    test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+end

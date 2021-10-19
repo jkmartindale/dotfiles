@@ -3,12 +3,16 @@ brew = [
     "1password",
     "appcleaner",
     "alt-tab",
-    "brew install homebrew/cask-fonts/font-caskaydia-cove-nerd-font", # for starship
+    "eqmac",
+    "homebrew/cask-fonts/font-caskaydia-cove-nerd-font", # for starship
     "fish",
     "git",
     "google-chrome",
+    "hiddenbar",
     "homebrew/cask-drivers/logitech-g-hub",
     "iterm2",
+    "keka",
+    "kekaexternalhelper",
     "microsoft-office",
     "python",
     "scroll-reverser",
@@ -21,6 +25,7 @@ brew = [
 
 [work]
 brew = [
+    "android-platform-tools",
     "bitwarden",
     "burp-suite-professional",
     "checkra1n",
@@ -34,7 +39,9 @@ brew = [
     "openvpn-connect",
     "oracle-jdk",
     "podman",
+    "scrcpy",
     "gromgit/fuse/sshfs-mac",
+    "testssl",
     "wkhtmltopdf", # for MobSF
 ]
 mas = [

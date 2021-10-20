@@ -5,6 +5,7 @@
 [core]
     autocrlf = input
     editor = code --wait
+    excludesfile = ~/.gitignore_global
 [user]
     email = 11380394+jkmartindale@users.noreply.github.com
     name = James Martindale

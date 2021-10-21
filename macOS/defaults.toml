@@ -47,6 +47,13 @@ AutomaticallyInstallMacOSUpdates = true
 ConfigDataInstall = true
 CriticalUpdateInstall = true
 
+["com.100hps.captin"]
+auto_launch = true
+show_dock_icon = false
+show_menu_bar_icon = false
+show_on_launch = false
+SUAutomaticallyUpdate = true
+
 ["com.sempliva.Tiles"]
 LaunchAtLoginEnabled = true
 MenuBarIconEnabled = false

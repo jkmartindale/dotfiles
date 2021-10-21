@@ -3,6 +3,7 @@ brew = [
     "1password",
     "appcleaner",
     "alt-tab",
+    "captin",
     "eqmac",
     "homebrew/cask-fonts/font-caskaydia-cove-nerd-font", # for starship
     "fish",
@@ -13,6 +14,8 @@ brew = [
     "iterm2",
     "keka",
     "kekaexternalhelper",
+    "maccy",
+    "mas",
     "microsoft-office",
     "python",
     "scroll-reverser",
@@ -31,11 +34,14 @@ brew = [
     "checkra1n",
     "db-browser-for-sqlite",
     "ideviceinstaller",
+    "intellij-idea-ce",
     "macfuse",
     "meetingbar",
     "microsoft-edge",
+    "microsoft-remote-desktop",
     "microsoft-teams",
     "mongodb-realm-studio",
+    "node",
     "openvpn-connect",
     "oracle-jdk",
     "podman",
@@ -45,7 +51,8 @@ brew = [
     "wkhtmltopdf", # for MobSF
 ]
 mas = [
-    497799835, # Xcode
+    497799835,  # Xcode
+    1127253508, # Unarchiver One
     1497506650, # Yubico Authenticator
 ]
 npm = [

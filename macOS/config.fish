@@ -1,6 +1,4 @@
 if status is-interactive
-    starship init fish | source
-
     # Homebrew
     if test -d (brew --prefix)"/share/fish/completions"
         set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
@@ -12,3 +10,5 @@ if status is-interactive
     # iTerm 2
     test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 end
+
+alias finished='afplay /System/Library/Sounds/Morse.aiff'

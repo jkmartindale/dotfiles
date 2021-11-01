@@ -3,6 +3,7 @@ brew = [
     "1password",
     "appcleaner",
     "alt-tab",
+    "caffeine",
     "captin",
     "eqmac",
     "homebrew/cask-fonts/font-caskaydia-cove-nerd-font", # for starship
@@ -17,6 +18,7 @@ brew = [
     "maccy",
     "mas",
     "microsoft-office",
+    "notion",
     "python",
     "scroll-reverser",
     "starship",
@@ -24,11 +26,13 @@ brew = [
     "telegram",
     "tiles",
     "visual-studio-code",
+    "zoom",
 ]
 
 [work]
 brew = [
     "android-platform-tools",
+    "altstore",
     "bitwarden",
     "burp-suite-professional",
     "checkra1n",
@@ -41,6 +45,7 @@ brew = [
     "microsoft-remote-desktop",
     "microsoft-teams",
     "mongodb-realm-studio",
+    "mvn",
     "node",
     "openvpn-connect",
     "oracle-jdk",
@@ -48,6 +53,7 @@ brew = [
     "scrcpy",
     "gromgit/fuse/sshfs-mac",
     "testssl",
+    "theharvester",
     "wkhtmltopdf", # for MobSF
 ]
 mas = [

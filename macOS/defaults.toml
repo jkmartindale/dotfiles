@@ -73,6 +73,14 @@ menubarIcon = 3
 SUAutomaticallyUpdate = true
 SUEnableAutomaticChecks = true
 
+["com.microsoft.onenote.mac".NSUserKeyEquivalents]
+"Heading 1" = "@^1"
+"Heading 2" = "@^2"
+"Heading 3" = "@^3"
+"Heading 4" = "@^4"
+"Heading 5" = "@^5"
+"Heading 6" = "@^6"
+
 ["net.freemacsoft.appcleaner"]
 ProtectDefaultApps = false
 ProtectOpenedApps = false

@@ -1,0 +1,15 @@
+# vim: syntax=plist
+
+{
+    /* Home */ "\UF729" = moveToBeginningOfLine:;
+    /* End */ "\UF72B" = moveToEndOfLine:;
+
+    /* Ctrl + Home */ "^\UF729" = moveToBeginningOfDocument:;
+    /* Ctrl + End */ "^\UF72B" = moveToEndOfDocument:;
+
+    /* Shift + Home */ "$\UF729" = moveToBeginningOfLineAndModifySelection:;
+    /* Shift + End */ "$\UF72B" = moveToEndOfLineAndModifySelection:;
+
+    /* Ctrl + Shift + Home */ "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:;
+    /* Ctrl + Shift + End */ "^$\UF72B" = moveToEndOfDocumentAndModifySelection:;
+}

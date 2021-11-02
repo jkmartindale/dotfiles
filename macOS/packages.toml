@@ -54,6 +54,7 @@ brew = [
     "gromgit/fuse/sshfs-mac",
     "testssl",
     "theharvester",
+    "wget",
     "wkhtmltopdf", # for MobSF
 ]
 mas = [

@@ -25,6 +25,7 @@ brew = [
     "spotify",
     "telegram",
     "tiles",
+    "time-out",
     "visual-studio-code",
     "zoom",
 ]
@@ -37,6 +38,7 @@ brew = [
     "burp-suite-professional",
     "checkra1n",
     "db-browser-for-sqlite",
+    "ghidra",
     "ideviceinstaller",
     "intellij-idea-ce",
     "macfuse",

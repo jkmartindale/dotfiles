@@ -12,3 +12,4 @@ if status is-interactive
 end
 
 alias finished='afplay /System/Library/Sounds/Morse.aiff'
+alias dock-spacer="defaults write com.apple.dock persistent-apps -array-add '{\"tile-type\"=\"spacer-tile\";}'killall Dock"

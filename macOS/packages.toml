@@ -5,6 +5,7 @@ brew = [
     "alt-tab",
     "caffeine",
     "captin",
+    "curl",
     "eqmac",
     "homebrew/cask-fonts/font-caskaydia-cove-nerd-font", # for starship
     "fish",
@@ -12,6 +13,7 @@ brew = [
     "google-chrome",
     "hiddenbar",
     "homebrew/cask-drivers/logitech-g-hub",
+    "insomnia",
     "iterm2",
     "keka",
     "kekaexternalhelper",
@@ -39,6 +41,8 @@ brew = [
     "checkra1n",
     "db-browser-for-sqlite",
     "ghidra",
+    "gobuster",
+    "hex-fiend",
     "ideviceinstaller",
     "intellij-idea-ce",
     "macfuse",
@@ -54,10 +58,12 @@ brew = [
     "podman",
     "scrcpy",
     "gromgit/fuse/sshfs-mac",
+    "subfinder",
     "testssl",
     "theharvester",
     "wget",
     "wkhtmltopdf", # for MobSF
+    "zenmap",
 ]
 mas = [
     497799835,  # Xcode

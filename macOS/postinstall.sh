@@ -5,3 +5,5 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
+
+sudo ln -s ~/Repositories/dotfiles/macOS/com.local.KeyRemapping.plist ~/Library/LaunchAgents/com.local.KeyRemapping.plist

@@ -60,6 +60,7 @@ brew = [
     "scrcpy",
     "gromgit/fuse/sshfs-mac",
     "subfinder",
+    "swaks",
     "telnet",
     "testssl",
     "theharvester",

@@ -7,3 +7,4 @@ echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 
 sudo ln -s ~/Repositories/dotfiles/macOS/com.local.KeyRemapping.plist ~/Library/LaunchAgents/com.local.KeyRemapping.plist
+sudo chown root:wheel ~/Library/LaunchAgents/com.local.KeyRemapping.plist

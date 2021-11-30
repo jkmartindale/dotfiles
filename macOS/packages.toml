@@ -38,6 +38,7 @@ brew = [
 brew = [
     "android-platform-tools",
     "altstore",
+    "bitwarden",
     "burp-suite-professional",
     "checkra1n",
     "db-browser-for-sqlite",
@@ -46,7 +47,6 @@ brew = [
     "hex-fiend",
     "ideviceinstaller",
     "intellij-idea-ce",
-    "keepassxc",
     "macfuse",
     "meetingbar",
     "microsoft-edge",

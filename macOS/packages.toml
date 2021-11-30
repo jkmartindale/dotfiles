@@ -15,6 +15,7 @@ brew = [
     "homebrew/cask-drivers/logitech-g-hub",
     "insomnia",
     "iterm2",
+    "karabiner-elements",
     "keka",
     "kekaexternalhelper",
     "maccy",

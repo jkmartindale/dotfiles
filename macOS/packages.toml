@@ -45,7 +45,7 @@ brew = [
     "ghidra",
     "gobuster",
     "hex-fiend",
-    "ideviceinstaller",
+    "ifunbox",
     "intellij-idea-ce",
     "macfuse",
     "meetingbar",

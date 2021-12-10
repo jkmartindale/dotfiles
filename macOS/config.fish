@@ -14,6 +14,9 @@ if status is-interactive
     test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 end
 
+# Android SDK
+fish_add_path ~/Library/Android/sdk/build-tools/(ls ~/Library/Android/sdk/build-tools)[-1]
+
 # curl
 fish_add_path /usr/local/opt/curl/bin
 set -gx CPPFLAGS -I/usr/local/opt/curl/include

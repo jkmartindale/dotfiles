@@ -17,6 +17,11 @@ end
 # Android SDK
 fish_add_path ~/Library/Android/sdk/build-tools/(ls ~/Library/Android/sdk/build-tools)[-1]
 
+# binutils
+fish_add_path /usr/local/opt/binutils/bin
+set -gx LDFLAGS "-L/usr/local/opt/binutils/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/binutils/include"
+
 # curl
 fish_add_path /usr/local/opt/curl/bin
 set -gx CPPFLAGS -I/usr/local/opt/curl/include

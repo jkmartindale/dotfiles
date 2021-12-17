@@ -9,3 +9,6 @@ renamed = "»${count}"
 staged = "+[${count}](green)"
 stashed = "$${count}"
 untracked = "?${count}"
+
+[python]
+python_binary = ["python3", "python", "python2"]

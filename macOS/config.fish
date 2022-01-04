@@ -31,4 +31,5 @@ set -gx PKG_CONFIG_PATH /usr/local/opt/curl/lib/pkgconfig
 alias brewlist='brew leaves | xargs brew deps --include-build --tree' # https://stackoverflow.com/a/61928483/3427178
 alias dock-spacer="defaults write com.apple.dock persistent-apps -array-add '{\"tile-type\"=\"spacer-tile\";}'killall Dock"
 alias finished='afplay /System/Library/Sounds/Morse.aiff'
+alias pip=pip3
 alias python=python3

@@ -80,7 +80,6 @@ npm = [
     "igf",
 ]
 pip = [
-    "androguard",
     "frida-tools",
     "objection",
 ]

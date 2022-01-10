@@ -33,3 +33,12 @@ alias dock-spacer="defaults write com.apple.dock persistent-apps -array-add '{\"
 alias finished='afplay /System/Library/Sounds/Morse.aiff'
 alias pip=pip3
 alias python=python3
+
+function upgrade
+    set_color -u; echo "Homebrew"; set_color normal
+    brew upgrade
+    set_color -u; echo "npm (Global)"; set_color normal
+    npm -g upgrade
+    set_color -u; echo -e "\nMac App Store"; set_color normal
+    mas upgrade
+end

@@ -69,7 +69,14 @@ ActiveEdgeUpperLeft = "quarterTopLeft"
 ActiveEdgeUpperRight = "quarterTopRight"
 
 ["com.lwouis.alt-tab-macos"]
+alignThumbnails = true
+fadeOutAnimation = true
+hideSpaceNumberLabels = true
+hideWindowlessApps = true
+holdShortcut = "\\\\U2318" # Replace jank macOS command-tab entirely
 menubarIcon = 3
+mouseHoverEnabled = false
+spacesToShow = 1
 SUAutomaticallyUpdate = true
 SUEnableAutomaticChecks = true
 

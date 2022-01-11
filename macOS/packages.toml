@@ -82,4 +82,5 @@ npm = [
 pip = [
     "frida-tools",
     "objection",
+    "pipdeptree",
 ]

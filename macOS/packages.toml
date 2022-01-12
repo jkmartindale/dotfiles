@@ -38,6 +38,7 @@ brew = [
 brew = [
     "android-platform-tools",
     "altstore",
+    "apktool",
     "binutils", # for gobjdump
     "bitwarden",
     "burp-suite-professional",

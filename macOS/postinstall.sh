@@ -12,3 +12,8 @@ sudo ln -s $REPOSITORIES/dotfiles/macOS/com.local.KeyRemapping.plist ~/Library/L
 sudo chown root:wheel ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 ln -sf $REPOSITORIES/dotfiles/macOS/config.fish ~/.config/fish/config.fish
 ln -sf $REPOSITORIES/dotfiles/starship.toml ~/.config/starship.toml
+
+git clone https://github.com/androguard/androguard.git $REPOSITORIES/androguard
+pushd $REPOSITORIES/androguard
+git checkout cd0f6a60a639cdecc4df40948fb0a172657f8b3b # version with androsim
+popd

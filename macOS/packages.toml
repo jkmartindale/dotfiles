@@ -71,6 +71,9 @@ brew = [
     "wkhtmltopdf", # for MobSF
     "zenmap",
 ]
+direct = [
+    "https://files.lowtechguys.com/YellowDot.zip"
+]
 mas = [
     497799835,  # Xcode
     917514700,  # Countdowns

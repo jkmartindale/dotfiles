@@ -76,6 +76,7 @@ mas = [
     917514700,  # Countdowns
     1127253508, # Unarchiver One
     1497506650, # Yubico Authenticator
+    1569600264, # Pandan
 ]
 npm = [
     "igf",

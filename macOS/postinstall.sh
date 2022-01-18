@@ -17,3 +17,8 @@ git clone https://github.com/androguard/androguard.git $REPOSITORIES/androguard
 pushd $REPOSITORIES/androguard
 git checkout cd0f6a60a639cdecc4df40948fb0a172657f8b3b # version with androsim
 popd
+
+git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git $REPOSITORIES/Mobile-Security-Framework-MobSF
+pushd $REPOSITORIES/Mobile-Security-Framework-MobSF
+bash setup.sh
+popd

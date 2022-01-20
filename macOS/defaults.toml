@@ -1,3 +1,6 @@
+# /usr/libexec/PlistBuddy
+# https://github.com/karmi/dotfiles/blob/master/mac/__application_preferences.sh
+
 ["Apple Global Domain"]
 AppleICUForce24HourTime = true
 AppleScrollerPagingBehavior = true # Jump to spot clicked in scroll bar
@@ -33,9 +36,29 @@ FXPreferredViewStyle = "Nlsv" # Prefer list view
 NSDocumentSaveNewDocumentsToCloud = false
 ShowPathbar = true # Show breadcrumbs at the bottom
 
+# macOS is a bad operating system
+ComputerViewSettings.CustomViewStyleVersion.ExtendedListViewSettingsV2.calculateAllSizes = true
+ComputerViewSettings.CustomViewStyleVersion.ListViewSettings.calculateAllSizes = true
+FK_DefaultListViewSettings.calculateAllSizes = true
+FK_StandardViewSettings.ExtendedListViewSettingsV2.calculateAllSizes = true
+FK_StandardViewSettings.calculateAllSizes.calculateAllSizes = true
+PackageViewSettings.ExtendedListViewSettingsV2.calculateAllSizes = true
+PackageViewSettings.ListViewSettings.calculateAllSizes = true
+SearchViewSettings.ExtendedListViewSettingsV2.calculateAllSizes = true
+SearchViewSettings.ListViewSettings.calculateAllSizes = true
+StandardViewSettings.ExtendedListViewSettingsV2.calculateAllSizes = true
+StandardViewSettings.ListViewSettings.calculateAllSizes = true
+TrashViewSettings.ExtendedListViewSettingsV2.calculateAllSizes = true
+TrashViewSettings.ListViewSettings.calculateAllSizes = true
+
 ["com.apple.menuextra.clock"] # killall SystemUIServer
 DateFormat = "\"EEE d MMM H:mm\""
 FlashDateSeparators = true
+
+# .DS_Store cringe
+["com.apple.desktopservices"]
+DSDontWriteNetworkStores = true
+DSDontWriteUSBStores = true
 
 ["com.apple.screensaver"]
 askForPassword = true # Ask for password after sleep/screen saver

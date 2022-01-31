@@ -49,6 +49,7 @@ brew = [
     "hex-fiend",
     "ifunbox",
     "intellij-idea-ce",
+    "intune-company-portal",
     "macfuse",
     "meetingbar",
     "microsoft-edge",

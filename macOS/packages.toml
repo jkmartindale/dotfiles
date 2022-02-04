@@ -45,6 +45,7 @@ brew = [
     "checkra1n",
     "db-browser-for-sqlite",
     "ghidra",
+    "go",
     "gobuster",
     "hex-fiend",
     "ifunbox",
@@ -71,6 +72,9 @@ brew = [
     "wget",
     "wkhtmltopdf", # for MobSF
     "zenmap",
+]
+go = [
+    "github.com/weppos/dnscaa"
 ]
 mas = [
     497799835,  # Xcode

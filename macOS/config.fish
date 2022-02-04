@@ -28,6 +28,9 @@ set -gx CPPFLAGS -I/usr/local/opt/curl/include
 set -gx LDFLAGS -L/usr/local/opt/curl/lib
 set -gx PKG_CONFIG_PATH /usr/local/opt/curl/lib/pkgconfig
 
+# digcaa
+fish_add_path $REPOSITORIES/dnscaa
+
 alias androsim='python2 $REPOSITORIES/androguard/androsim.py'
 alias brewlist='brew leaves | xargs brew deps --include-build --tree' # https://stackoverflow.com/a/61928483/3427178
 alias dock-spacer="defaults write com.apple.dock persistent-apps -array-add '{\"tile-type\"=\"spacer-tile\";}'killall Dock"

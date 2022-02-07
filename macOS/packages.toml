@@ -30,6 +30,7 @@ brew = [
     "telegram",
     "tiles",
     "time-out",
+    "tldr",
     "visual-studio-code",
     "zoom",
 ]

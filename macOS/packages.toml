@@ -73,6 +73,10 @@ brew = [
     "wkhtmltopdf", # for MobSF
     "zenmap",
 ]
+git = [
+    "https://github.com/androguard/androguard.git@cd0f6a6", # androsim
+    "https://github.com/silentsignal/rsa_sign2n.git"
+]
 mas = [
     497799835,  # Xcode
     917514700,  # Countdowns

@@ -73,9 +73,6 @@ brew = [
     "wkhtmltopdf", # for MobSF
     "zenmap",
 ]
-go = [
-    "github.com/weppos/dnscaa"
-]
 mas = [
     497799835,  # Xcode
     917514700,  # Countdowns

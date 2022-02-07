@@ -13,11 +13,21 @@ sudo chown root:wheel ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 ln -sf $REPOSITORIES/dotfiles/macOS/config.fish ~/.config/fish/config.fish
 ln -sf $REPOSITORIES/dotfiles/starship.toml ~/.config/starship.toml
 
+# androsim
 git clone https://github.com/androguard/androguard.git $REPOSITORIES/androguard
 pushd $REPOSITORIES/androguard
-git checkout cd0f6a60a639cdecc4df40948fb0a172657f8b3b # version with androsim
+git checkout cd0f6a60a639cdecc4df40948fb0a172657f8b3b
 popd
 
+# digcaa
+git clone https://github.com/weppos/dnscaa.git $REPOSITORIES/digcaa
+pushd $REPOSITORIES/digcaa
+go mod init github.com/weppos/dnscaa
+go mod tidy
+go build cmd/digcaa/digcaa.go
+popd
+
+# MobSF
 git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git $REPOSITORIES/Mobile-Security-Framework-MobSF
 pushd $REPOSITORIES/Mobile-Security-Framework-MobSF
 bash setup.sh

@@ -111,6 +111,10 @@ ActiveEdgeTop = "fullscreen"
 ActiveEdgeUpperLeft = "quarterTopLeft"
 ActiveEdgeUpperRight = "quarterTopRight"
 
+["com.spotify.client".NSUserKeyEquivalents]
+"Go Back" = "@["
+"Go Forward" = "@]"
+
 ["com.pilotmoon.scroll-reverser"]
 HideIcon = true
 InvertScrollingOn = true

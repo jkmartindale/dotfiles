@@ -77,20 +77,6 @@ show_menu_bar_icon = false
 show_on_launch = false
 SUAutomaticallyUpdate = true
 
-["com.sempliva.Tiles"]
-LaunchAtLoginEnabled = true
-MenuBarIconEnabled = false
-
-["com.sempliva.Tiles".ActiveEdges]
-ActiveEdgeBottom = "centerThird"
-ActiveEdgeLeft = "halfLeft"
-ActiveEdgeLowerLeft = "quarterBottomLeft"
-ActiveEdgeLowerRight = "quarterBottomRight"
-ActiveEdgeRight = "halfRight"
-ActiveEdgeTop = "fullscreen"
-ActiveEdgeUpperLeft = "quarterTopLeft"
-ActiveEdgeUpperRight = "quarterTopRight"
-
 ["com.lwouis.alt-tab-macos"]
 alignThumbnails = true
 fadeOutAnimation = true
@@ -111,13 +97,27 @@ SUEnableAutomaticChecks = true
 "Heading 5" = "@^5"
 "Heading 6" = "@^6"
 
-["net.freemacsoft.appcleaner"]
-ProtectDefaultApps = false
-ProtectOpenedApps = false
-SUEnableAutomaticChecks = true
+["com.sempliva.Tiles"]
+LaunchAtLoginEnabled = true
+MenuBarIconEnabled = false
+
+["com.sempliva.Tiles".ActiveEdges]
+ActiveEdgeBottom = "centerThird"
+ActiveEdgeLeft = "halfLeft"
+ActiveEdgeLowerLeft = "quarterBottomLeft"
+ActiveEdgeLowerRight = "quarterBottomRight"
+ActiveEdgeRight = "halfRight"
+ActiveEdgeTop = "fullscreen"
+ActiveEdgeUpperLeft = "quarterTopLeft"
+ActiveEdgeUpperRight = "quarterTopRight"
 
 ["com.pilotmoon.scroll-reverser"]
 HideIcon = true
 InvertScrollingOn = true
 ReverseTrackpad = false
 StartAtLogin = true
+
+["net.freemacsoft.appcleaner"]
+ProtectDefaultApps = false
+ProtectOpenedApps = false
+SUEnableAutomaticChecks = true

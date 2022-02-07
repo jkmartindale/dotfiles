@@ -29,7 +29,6 @@ brew = [
     "spotify",
     "telegram",
     "tiles",
-    "time-out",
     "tldr",
     "visual-studio-code",
     "zoom",

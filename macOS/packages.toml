@@ -75,7 +75,8 @@ brew = [
 ]
 git = [
     "https://github.com/androguard/androguard.git@cd0f6a6", # androsim
-    "https://github.com/silentsignal/rsa_sign2n.git"
+    "https://github.com/silentsignal/rsa_sign2n.git",
+    "https://github.com/AliasIO/wappalyzer.git",
 ]
 mas = [
     497799835,  # Xcode

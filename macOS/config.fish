@@ -41,8 +41,10 @@ alias python=python3
 function upgrade
     set_color -u; echo "Homebrew"; set_color normal
     brew upgrade
+    set_color -u; echo -e "Mac App Store"; set_color normal
+    mas upgrade
     set_color -u; echo -e "\nnpm (Global)"; set_color normal
     npm -g upgrade
-    set_color -u; echo -e "\nMac App Store"; set_color normal
-    mas upgrade
+    set_color -u; echo -e "\ntldr"; set_color normal
+    tldr --update
 end

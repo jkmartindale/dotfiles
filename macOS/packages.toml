@@ -16,6 +16,7 @@ brew = [
     "homebrew/cask-drivers/logitech-g-hub",
     "insomnia",
     "iterm2",
+    "jadx",
     "karabiner-elements",
     "keka",
     "kekaexternalhelper",
@@ -44,6 +45,7 @@ brew = [
     "bitwarden",
     "burp-suite-professional",
     "checkra1n",
+    "cyberduck",
     "db-browser-for-sqlite",
     "ghidra",
     "go",
@@ -65,12 +67,14 @@ brew = [
     "podman",
     "scrcpy",
     "gromgit/fuse/sshfs-mac",
+    "sqlmap",
     "subfinder",
     "swaks",
     "telnet",
     "testssl",
     "theharvester",
     "wget",
+    "wpscanteam/tap/wpscan",
     "wkhtmltopdf", # for MobSF
     "zenmap",
 ]
@@ -88,6 +92,7 @@ mas = [
 ]
 npm = [
     "igf",
+    "vercel",
 ]
 pip = [
     "frida-tools",

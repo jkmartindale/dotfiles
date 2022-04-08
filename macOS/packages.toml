@@ -96,6 +96,7 @@ npm = [
 ]
 pip = [
     "frida-tools",
+    "ghtopdep",
     "objection",
     "pipdeptree",
 ]

@@ -26,6 +26,7 @@ brew = [
     "notion",
     "openssl",
     "python",
+    "qpdf",
     "scroll-reverser",
     "starship",
     "spotify",

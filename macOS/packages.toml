@@ -17,6 +17,7 @@ brew = [
     "insomnia",
     "iterm2",
     "jadx",
+    "jq",
     "karabiner-elements",
     "keka",
     "kekaexternalhelper",

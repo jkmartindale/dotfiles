@@ -97,6 +97,9 @@ SUEnableAutomaticChecks = true
 "Heading 5" = "@^5"
 "Heading 6" = "@^6"
 
+["com.microsoft.teams".NSUserKeyEquivalents]
+"Quit Microsoft Teams" = "\\U200b" # Disable ⌘Q
+
 ["com.sempliva.Tiles"]
 LaunchAtLoginEnabled = true
 MenuBarIconEnabled = false

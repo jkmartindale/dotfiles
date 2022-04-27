@@ -14,6 +14,7 @@ brew = [
     "google-chrome",
     "hiddenbar",
     "homebrew/cask-drivers/logitech-g-hub",
+    "homebrew/cask-drivers/logitech-camera-settings",
     "insomnia",
     "iterm2",
     "jadx",
@@ -101,4 +102,11 @@ pip = [
     "ghtopdep",
     "objection",
     "pipdeptree",
+]
+
+[rust]
+cargo = [
+    "cargo-expand",
+    "cargo-update",
+    "sccache",
 ]

@@ -18,6 +18,11 @@ InAppReviewEnabled = false
 ["/Library/Preferences/com.apple.commerce"]
 AutoUpdate = true
 
+# .DS_Store cringe
+["com.apple.desktopservices"]
+DSDontWriteNetworkStores = true
+DSDontWriteUSBStores = true
+
 ["com.apple.dock"] # killall Dock
 enable-spring-load-actions-on-all-items = true # Drag file over Dock item to open the app
 expose-group-apps = false
@@ -54,11 +59,6 @@ TrashViewSettings.ListViewSettings.calculateAllSizes = true
 ["com.apple.menuextra.clock"] # killall SystemUIServer
 DateFormat = "\"EEE d MMM H:mm\""
 FlashDateSeparators = true
-
-# .DS_Store cringe
-["com.apple.desktopservices"]
-DSDontWriteNetworkStores = true
-DSDontWriteUSBStores = true
 
 ["com.apple.screensaver"]
 askForPassword = true # Ask for password after sleep/screen saver

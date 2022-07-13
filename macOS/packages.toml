@@ -97,6 +97,7 @@ npm = [
     "vercel",
 ]
 pip = [
+    "extract-msg",
     "frida-tools",
     "ghtopdep",
     "objection",

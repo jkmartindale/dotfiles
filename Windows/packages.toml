@@ -6,6 +6,10 @@ apt = [
     "python3-pip",
     "wslu",
 ]
+pip = [
+    "pipdeptree",
+    "wheel",
+]
 winget = [
     "7zip.7zip",
     "Git.Git",

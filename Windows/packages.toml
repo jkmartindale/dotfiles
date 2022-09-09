@@ -1,0 +1,15 @@
+[base]
+apt = [
+    "fish",
+    "npm",
+    "python-is-python3",
+    "python3-pip",
+    "wslu",
+]
+winget = [
+    "7zip.7zip",
+    "Git.Git",
+    "JetBrains.IntelliJIDEA.Community.EAP",
+    "Microsoft.VisualStudioCode",
+    "Starship.Starship",
+]

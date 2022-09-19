@@ -12,6 +12,7 @@ pip = [
 ]
 winget = [
     "7zip.7zip",
+    "Docker.DockerDesktop",
     "Git.Git",
     "JetBrains.IntelliJIDEA.Community.EAP",
     "Microsoft.VisualStudioCode",

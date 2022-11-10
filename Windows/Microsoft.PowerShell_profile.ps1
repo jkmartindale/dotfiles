@@ -9,10 +9,7 @@ function export {
     }
 }
 
-function Start-PSAdmin
-{
-    Start-Process PowerShell -Verb RunAs
-}
+Set-Alias intellij idea64
 
 function Start-Proxy {
     $env:HTTP_PROXY = $env:HTTPS_PROXY = "localhost:8080"
@@ -21,6 +18,11 @@ function Start-Proxy {
 function Stop-Proxy {
     Remove-Item Env:\HTTP_PROXY
     Remove-Item Env:\HTTPS_PROXY
+}
+
+function Start-PSAdmin
+{
+    Start-Process PowerShell -Verb RunAs
 }
 
 Set-Alias -Name source -Value Invoke-Expression

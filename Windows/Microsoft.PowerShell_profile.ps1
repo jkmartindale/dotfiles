@@ -1,5 +1,9 @@
 Invoke-Expression (&starship init powershell)
 
+Remove-Item alias:curl
+
+function Decode-MIME { $args | python -c "__import__('quopri').decode(__import__('sys').stdin.buffer, __import__('sys').stdout.buffer)"}
+
 function export {
     # Allow setting multiple variables separated by spaces
     $args | ForEach-Object {
@@ -26,6 +30,10 @@ function Start-PSAdmin
 }
 
 Set-Alias -Name source -Value Invoke-Expression
+
+function steam-idle {
+    steam-idle.exe ($args -replace "[^\d]*")
+}
 
 function profile {
     code $profile

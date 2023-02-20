@@ -1,6 +1,7 @@
 Invoke-Expression (&starship init powershell)
 
 Remove-Item alias:curl
+$env:PATH = (($env:PATH.Split(';') | Where-Object { $_ -ne "C:\WINDOWS\system32" }) -join ';') + ";C:\WINDOWS\system32"
 
 function Decode-MIME { $args | python -c "__import__('quopri').decode(__import__('sys').stdin.buffer, __import__('sys').stdout.buffer)"}
 

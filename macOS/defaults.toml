@@ -30,6 +30,7 @@ mineffect = "suck"
 minimize-to-application = true
 mru-spaces = false # Don't rearrange Spaces based on use
 show-recents = false
+# static-only = true # only show open apps
 
 ["com.apple.finder"] # killall Finder
 _FXSortFoldersFirst = true

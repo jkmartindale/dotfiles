@@ -4,5 +4,5 @@ set -x SHELL fish
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # Unified config
-set -gx REPOSITORIES $HOME/Repositories
+set -gx REPOSITORIES $USERPROFILE/Repositories
 source $REPOSITORIES/dotfiles/config.fish

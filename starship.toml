@@ -19,11 +19,15 @@ untracked = "?${count}"
 
 [palettes.custom]
 fish = "#0088cc"
+powershell = "#2671be"
 
 [python]
 python_binary = ["python3", "python", "python2"]
 
 [shell]
 disabled = false
-fish_indicator = "[󰈺](fish bold)"
-format = "$indicator"
+format = "[$indicator](bold)"
+bash_indicator = "󱆃"
+fish_indicator = "[󰈺](fish)"
+powershell_indicator = "[󰨊](powershell)"
+zsh_indicator = ""

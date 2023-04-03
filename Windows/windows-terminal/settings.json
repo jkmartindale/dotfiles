@@ -35,8 +35,12 @@
     "profiles":
     {
         "defaults": {
-            "acrylicOpacity": 0.7,
             "colorScheme": "Tango Dark",
+            "font":
+            {
+                "face": "CaskaydiaCove NFM"
+            },
+            "opacity": 70,
             "useAcrylic": true
         },
         "list":
@@ -47,17 +51,16 @@
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell",
-                "startingDirectory": "C:\\Users\\jk\\Desktop"
+                "startingDirectory": "%USERPROFILE%\\Desktop"
             },
             {
-                "commandline": "cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt",
-                "startingDirectory": "C:\\Users\\jk\\Desktop"
+                "startingDirectory": "%USERPROFILE%\\Desktop"
             },
             {
-                "colorScheme" : "Raspberry",
+                "colorScheme": "Raspberry",
                 "commandline": "wsl.exe -d Ubuntu",
                 "guid": "{1209025e-e57d-4e19-b6e7-05e47e9256ed}",
                 "icon": "ms-appdata:///local/ubuntu.png",

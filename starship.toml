@@ -1,3 +1,6 @@
+format="$shell$all"
+palette = "custom"
+
 [env_var.PROXY]
 variable = "HTTPS_PROXY"
 format = '[\(proxy on\)](purple) '
@@ -14,5 +17,13 @@ staged = "+[${count}](green)"
 stashed = "$${count}"
 untracked = "?${count}"
 
+[palettes.custom]
+fish = "#0088cc"
+
 [python]
 python_binary = ["python3", "python", "python2"]
+
+[shell]
+disabled = false
+fish_indicator = "[󰈺](fish bold)"
+format = "$indicator"

@@ -1,16 +1,5 @@
-set -gx REPOSITORIES $HOME/Repositories
-source $REPOSITORIES/dotfiles/config.fish
-
+# iTerm 2
 if status is-interactive
-    # Homebrew
-    if test -d (brew --prefix)"/share/fish/completions"
-        set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
-    end
-    if test -d (brew --prefix)"/share/fish/vendor_completions.d"
-        set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
-    end
-
-    # iTerm 2
     test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 end
 
@@ -48,3 +37,7 @@ function upgrade
     set_color -u; echo -e "\ntldr"; set_color normal
     tldr --update
 end
+
+# Unified config
+set -gx REPOSITORIES $HOME/Repositories
+source $REPOSITORIES/dotfiles/config.fish

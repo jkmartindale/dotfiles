@@ -9,7 +9,6 @@ brew = [
     "eqmac",
     "homebrew/cask-fonts/font-caskaydia-cove-nerd-font", # for starship
     "fig",
-    "fish",
     "git",
     "google-chrome",
     "hiddenbar",
@@ -29,7 +28,6 @@ brew = [
     "python",
     "qpdf",
     "scroll-reverser",
-    "starship",
     "spotify",
     "telegram",
     "tiles",
@@ -42,7 +40,6 @@ brew = [
 brew = [
     "android-platform-tools",
     "altstore",
-    "apktool",
     "binutils", # for gobjdump
     "bitwarden",
     "burp-suite-professional",
@@ -98,15 +95,5 @@ npm = [
 ]
 pip = [
     "extract-msg",
-    "frida-tools",
     "ghtopdep",
-    "objection",
-    "pipdeptree",
-]
-
-[rust]
-cargo = [
-    "cargo-expand",
-    "cargo-update",
-    "sccache",
 ]

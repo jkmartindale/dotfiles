@@ -1,18 +1,10 @@
 [base]
 apt = [
     "build-essential",
-    "fish", # TODO: sudo apt-add-repository ppa:fish-shell/release-3, or choose brew fish instead
     "npm",
     "python-is-python3",
     "python3-pip",
     "wslu",
-]
-brew = [
-    "starship"
-]
-pip = [
-    "pipdeptree",
-    "wheel",
 ]
 winget = [
     "7zip.7zip",
@@ -21,9 +13,4 @@ winget = [
     "JetBrains.IntelliJIDEA.Community.EAP",
     "Microsoft.VisualStudioCode",
     "Starship.Starship",
-]
-
-[work]
-pip = [
-    "semgrep"
 ]

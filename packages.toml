@@ -1,0 +1,24 @@
+[base]
+brew = [
+    "fish",
+    "starship",
+]
+
+[work]
+brew = [
+    "apktool",
+]
+pip = [
+    "frida-tools",
+    "objection",
+    "pipdeptree",
+    "semgrep",
+    "wheel",
+]
+
+[rust]
+cargo = [
+    "cargo-expand",
+    "cargo-update",
+    "sccache",
+]

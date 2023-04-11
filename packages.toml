@@ -9,12 +9,12 @@ brew = [
     "apktool",
 ]
 pip = [
+    "wheel",
     "frida-tools",
     "objection",
     "pipdeptree",
     "semgrep",
     "scapy[complete]",
-    "wheel",
 ]
 
 [rust]

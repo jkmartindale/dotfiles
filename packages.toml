@@ -13,6 +13,7 @@ pip = [
     "objection",
     "pipdeptree",
     "semgrep",
+    "scapy[complete]",
     "wheel",
 ]
 

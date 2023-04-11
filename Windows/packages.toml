@@ -32,6 +32,3 @@ winget = [
     "WinSCP.WinSCP",
     "WiresharkFoundation.Wireshark",
 ]
-pip = [
-    "scapy[complete]"
-]

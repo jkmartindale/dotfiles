@@ -8,14 +8,30 @@ apt = [
 ]
 winget = [
     "7zip.7zip",
+    "cURL.cURL",
     "Docker.DockerDesktop",
     "Git.Git",
     "JetBrains.IntelliJIDEA.Community.EAP",
     "Microsoft.VisualStudioCode",
+    "Postman.Postman",
+    "python3",
+    "RevoUninstaller.RevoUninstaller",
     "Starship.Starship",
+    "valinet.ExplorerPatcher",
 ]
 
 [work]
 winget = [
-    "WiresharkFoundation.Wireshark"
+    "Bitwarden.Bitwarden",
+    "Insecure.Nmap",
+    "Microsoft.Teams",
+    "Microsoft.WindowsSDK", # for cffi <- cryptography <- scapy, or Microsoft.VisualStudio.2022.BuildTools w/SDK + C++ build tools
+    "PortSwigger.BurpSuite.Professional",
+    "SlackTechnologies.Slack",
+    "tailscale.tailscale",
+    "WinSCP.WinSCP",
+    "WiresharkFoundation.Wireshark",
+]
+pip = [
+    "scapy[complete]"
 ]

@@ -1,11 +1,19 @@
 format="$shell$all"
 palette = "custom"
 
+[aws]
+# Double space is ugly but default for compatibility https://github.com/starship/starship/pull/2907
+symbol = "☁️ "
+
+[env_var.IS_TRANSCRIBING]
+format = "[󰈙](green)"
+
 [env_var.PROXY]
 variable = "HTTPS_PROXY"
 format = '[\(proxy on\)](purple) '
 
 [git_status]
+# Starship doesn't add count by default https://starship.rs/config/#git-status
 ahead = "⇡${count}"
 behind = "⇣${count}"
 conflicted = "=${count}"
@@ -26,7 +34,7 @@ python_binary = ["python3", "python", "python2"]
 
 [shell]
 disabled = false
-format = "[$indicator](bold)"
+format = "[$indicator](bold) "
 bash_indicator = "󱆃"
 fish_indicator = "[󰈺](fish)"
 powershell_indicator = "[󰨊](powershell)"

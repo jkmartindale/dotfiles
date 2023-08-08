@@ -12,7 +12,7 @@ brew = [
     "git",
     "google-chrome",
     "hiddenbar",
-    "homebrew/cask-drivers/logitech-g-hub",
+    "logitech-g-hub",
     "insomnia",
     "iterm2",
     "jadx",

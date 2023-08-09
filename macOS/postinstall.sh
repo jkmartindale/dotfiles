@@ -7,6 +7,7 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
+cat <(echo "auth sufficient pam_tid.so") /etc/pam.d/sudo | sudo tee /etc/pam.d/sudo
 
 ln -sf $REPOSITORIES/dotfiles/macOS/config.fish ~/.config/fish/config.fish
 ln -sf $REPOSITORIES/dotfiles/starship.toml ~/.config/starship.toml

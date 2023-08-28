@@ -5,6 +5,7 @@
 AppleICUForce24HourTime = true
 AppleScrollerPagingBehavior = true # Jump to spot clicked in scroll bar
 AppleShowAllExtensions = true
+AppleShowAllFiles = true
 NSAutomaticCapitalizationEnabled = false
 NSAutomaticPeriodSubstitutionEnabled = false # No more double space for period
 NSAutomaticQuoteSubstitutionEnabled = false
@@ -34,7 +35,6 @@ show-recents = false
 
 ["com.apple.finder"] # killall Finder
 _FXSortFoldersFirst = true
-AppleShowAllFiles = true
 FXArrangeGroupViewBy = "Name"
 FXDefaultSearchScope = "SCcf" # Default search scope to current folder
 FXEnableExtensionChangeWarning = false

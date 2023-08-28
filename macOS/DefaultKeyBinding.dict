@@ -1,4 +1,4 @@
-# vim: syntax=plist
+/* vim: syntax=OpenStep-Property-List */
 
 {
     /* Home */ "\UF729" = moveToBeginningOfLine:;

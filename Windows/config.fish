@@ -1,8 +1,8 @@
+# Variables
 set -x BROWSER wslview
-set -x SHELL fish
 
+# Homebrew
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
 fish_add_path ~/.local/bin
 
 # Unified config

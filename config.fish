@@ -3,7 +3,7 @@ ssh-add -A 2>/dev/null
 if status is-interactive
     # Variables
     set -x EDITOR code
-    set -x SHELL fish
+    set -x SHELL (which fish)
 
     # Shell experience
     starship init fish | source

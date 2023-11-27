@@ -8,6 +8,9 @@ brew = [
 brew = [
     "apktool",
 ]
+fisher = [
+    "jorgebucaran/nvm.fish",
+]
 pip = [
     "wheel",
     "frida-tools",

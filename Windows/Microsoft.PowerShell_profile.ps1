@@ -12,10 +12,12 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
         }
 }
 
-function ConvertFrom-MIME { $args | python -c "__import__('quopri').decode(__import__('sys').stdin.buffer, __import__('sys').stdout.buffer)"}
+$env:PATH = (($env:PATH.Split(';') | Where-Object { $_ -ne "C:\WINDOWS\system32" }) -join ';') + ";C:\WINDOWS\system32"
+
+function ConvertFrom-MIME { $args | python -c "__import__('quopri').decode(__import__('sys').stdin.buffer, __import__('sys').stdout.buffer)" }
 
 Remove-Item alias:curl
-$env:PATH = (($env:PATH.Split(';') | Where-Object { $_ -ne "C:\WINDOWS\system32" }) -join ';') + ";C:\WINDOWS\system32"
+$PSDefaultParameterValues["Invoke-WebRequest:UseBasicParsing"] = $true
 
 function export {
     # Allow setting multiple variables separated by spaces
@@ -27,6 +29,10 @@ function export {
 }
 
 Set-Alias intellij idea64
+
+function profile {
+    code $profile
+}
 
 function Start-Proxy {
     $env:HTTP_PROXY = $env:HTTPS_PROXY = "localhost:8080"
@@ -46,8 +52,4 @@ Set-Alias -Name source -Value Invoke-Expression
 
 function steam-idle {
     steam-idle.exe ($args -replace "[^\d]*")
-}
-
-function profile {
-    code $profile
 }

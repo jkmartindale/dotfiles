@@ -1,6 +1,7 @@
 Invoke-Expression (&starship init powershell)
 Set-PSReadLineKeyHandler -Key Ctrl+h -Function BackwardKillWord
-$outputencoding = [Console]::OutputEncoding # https://devblogs.microsoft.com/powershell/outputencoding-to-the-rescue/
+# https://devblogs.microsoft.com/powershell/outputencoding-to-the-rescue/
+$outputencoding = [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)

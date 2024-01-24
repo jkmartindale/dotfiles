@@ -14,6 +14,7 @@ alias dock-spacer="defaults write com.apple.dock persistent-apps -array-add '{\"
 alias finished='afplay /System/Library/Sounds/Morse.aiff'
 alias pip=pip3
 alias python=python3
+alias thunk='osascript -e beep'
 
 function upgrade
     set_color -u; echo "Homebrew"; set_color normal

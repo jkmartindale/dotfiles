@@ -1,3 +1,7 @@
+# Unified config
+set -gx REPOSITORIES $HOME/Repositories
+source $REPOSITORIES/dotfiles/config.fish
+
 # Shell experience
 # iTerm 2
 if status is-interactive
@@ -38,7 +42,3 @@ set -gx PKG_CONFIG_PATH /usr/local/opt/curl/lib/pkgconfig
 
 # digcaa
 fish_add_path $REPOSITORIES/dnscaa
-
-# Unified config
-set -gx REPOSITORIES $HOME/Repositories
-source $REPOSITORIES/dotfiles/config.fish

@@ -6,7 +6,7 @@ if not status is-interactive
 end
 
 # Variables
-set -x EDITOR code
+set -x EDITOR code --wait
 set -x SHELL (which fish)
 
 # Shell experience

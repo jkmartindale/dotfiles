@@ -116,6 +116,7 @@ ActiveEdgeTop = "fullscreen"
 ActiveEdgeUpperLeft = "quarterTopLeft"
 ActiveEdgeUpperRight = "quarterTopRight"
 
+# defaults write com.spotify.client NSUserKeyEquivalents -dict-add "Go Back" "'@['"
 ["com.spotify.client".NSUserKeyEquivalents]
 "Go Back" = "@["
 "Go Forward" = "@]"

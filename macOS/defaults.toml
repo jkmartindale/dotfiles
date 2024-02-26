@@ -81,6 +81,7 @@ SUAutomaticallyUpdate = true
 ["com.lwouis.alt-tab-macos"]
 alignThumbnails = true
 fadeOutAnimation = true
+hideColoredCircles = true
 hideSpaceNumberLabels = true
 hideWindowlessApps = true
 holdShortcut = "\\\\U2318" # Replace jank macOS command-tab entirely

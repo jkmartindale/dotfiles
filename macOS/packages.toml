@@ -1,9 +1,7 @@
 [base]
 brew = [
-    "1password",
     "appcleaner",
     "alt-tab",
-    "caffeine",
     "captin",
     "curl",
     "eqmac",
@@ -13,9 +11,7 @@ brew = [
     "google-chrome",
     "hiddenbar",
     "logitech-g-hub",
-    "insomnia",
     "iterm2",
-    "jadx",
     "jq",
     "karabiner-elements",
     "keka",
@@ -23,49 +19,66 @@ brew = [
     "maccy",
     "mas",
     "microsoft-office",
-    "notion",
+    "node",
     "openssl",
     "python",
-    "qpdf",
     "scroll-reverser",
     "spotify",
-    "telegram",
     "tiles",
     "tldr",
     "visual-studio-code",
-    "zoom",
+]
+
+[personal]
+brew = [
+    "1password",
+    "notion",
+    "telegram",
+]
+npm = [
+    "vercel",
+]
+
+[mobile]
+depends = [ "java" ]
+brew = [
+    "altstore",
+    "android-platform-tools",
+    "binutils", # for gobjdump
+    "checkra1n",
+    "db-browser-for-sqlite",
+    "ifunbox",
+    "jadx",
+    "scrcpy",
+    "wkhtmltopdf", # for MobSF
+]
+git = [
+    "https://github.com/androguard/androguard.git@cd0f6a6", # androsim
+]
+npm = [
+    "igf",
+]
+
+[java]
+brew = [
+    "intellij-idea-ce",
+    "mvn",
+    "oracle-jdk",
 ]
 
 [work]
 brew = [
-    "android-platform-tools",
-    "altstore",
-    "binutils", # for gobjdump
     "bitwarden",
     "burp-suite-professional",
-    "checkra1n",
     "cyberduck",
-    "db-browser-for-sqlite",
     "ghidra",
     "go",
     "gobuster",
     "hex-fiend",
-    "ifunbox",
-    "intellij-idea-ce",
-    "intune-company-portal",
-    "macfuse",
     "meetingbar",
     "microsoft-edge",
-    "microsoft-remote-desktop",
     "microsoft-teams",
-    "mongodb-realm-studio",
-    "mvn",
-    "node",
-    "openvpn-connect",
-    "oracle-jdk",
     "podman",
-    "scrcpy",
-    "gromgit/fuse/sshfs-mac",
     "sqlmap",
     "subfinder",
     "swaks",
@@ -74,13 +87,11 @@ brew = [
     "theharvester",
     "wget",
     "wpscanteam/tap/wpscan",
-    "wkhtmltopdf", # for MobSF
     "zenmap",
 ]
 git = [
-    "https://github.com/androguard/androguard.git@cd0f6a6", # androsim
     "https://github.com/silentsignal/rsa_sign2n.git",
-    "https://github.com/AliasIO/wappalyzer.git",
+    "https://github.com/jkmartndale/wappalyzer.git",
 ]
 mas = [
     497799835,  # Xcode
@@ -88,10 +99,6 @@ mas = [
     1127253508, # Unzip One
     1497506650, # Yubico Authenticator
     1569600264, # Pandan
-]
-npm = [
-    "igf",
-    "vercel",
 ]
 pip = [
     "extract-msg",

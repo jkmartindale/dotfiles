@@ -31,5 +31,7 @@ git remote set-url origin git@github.com:jkmartindale/dotfiles.git
 git config --global user.name $NAME
 git config --global user.email $GH_EMAIL
 
+mkdir -p ~/Library/KeyBindings
+ln -sf $REPOSITORIES/dotfiles/macOS/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
 ln -sf $REPOSITORIES/dotfiles/macOS/config.fish ~/.config/fish/config.fish
 ln -sf $REPOSITORIES/dotfiles/starship.toml ~/.config/starship.toml

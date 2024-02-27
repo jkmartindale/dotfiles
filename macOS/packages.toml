@@ -6,7 +6,6 @@ brew = [
     "curl",
     "eqmac",
     "homebrew/cask-fonts/font-caskaydia-cove-nerd-font", # for starship
-    "fig",
     "git",
     "google-chrome",
     "hiddenbar",

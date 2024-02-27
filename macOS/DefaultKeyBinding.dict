@@ -1,5 +1,7 @@
 /* vim: syntax=OpenStep-Property-List */
 
+/* Reference: https://github.com/ttscoff/KeyBindings */
+
 {
     /* Home */ "\UF729" = moveToBeginningOfLine:;
     /* End */ "\UF72B" = moveToEndOfLine:;

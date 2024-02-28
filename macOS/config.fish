@@ -27,9 +27,6 @@ function upgrade
     tldr --update
 end
 
-# Android SDK
-fish_add_path ~/Library/Android/sdk/build-tools/(ls ~/Library/Android/sdk/build-tools)[-1]
-
 # binutils
 fish_add_path /usr/local/opt/binutils/bin
 set -gx LDFLAGS "-L/usr/local/opt/binutils/lib"

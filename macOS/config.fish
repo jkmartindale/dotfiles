@@ -10,7 +10,7 @@ end
 
 # Aliases/functions
 alias androsim='python2 $REPOSITORIES/androguard/androsim.py'
-alias dock-spacer="defaults write com.apple.dock persistent-apps -array-add '{\"tile-type\"=\"spacer-tile\";}'killall Dock"
+alias dock-spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-type=\"spacer-tile\";}'; killall Dock"
 alias finished='afplay /System/Library/Sounds/Morse.aiff'
 alias pip=pip3
 alias python=python3

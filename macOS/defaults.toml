@@ -2,10 +2,14 @@
 # https://github.com/karmi/dotfiles/blob/master/mac/__application_preferences.sh
 
 ["Apple Global Domain"]
+AppleICUDateFormatStrings = { 1 = "y-MM-dd" }
 AppleICUForce24HourTime = true
+AppleInterfaceStyle = "Dark"
+AppleMenuBarVisibleInFullscreen = true
 AppleScrollerPagingBehavior = true # Jump to spot clicked in scroll bar
 AppleShowAllExtensions = true
 AppleShowAllFiles = true
+"com.apple.mouse.linear" = true # oh my god Apple finally let you make mice bearable to use with macOS
 NSAutomaticCapitalizationEnabled = false
 NSAutomaticPeriodSubstitutionEnabled = false # No more double space for period
 NSAutomaticQuoteSubstitutionEnabled = false
@@ -30,7 +34,11 @@ expose-group-apps = false
 mineffect = "suck"
 minimize-to-application = true
 mru-spaces = false # Don't rearrange Spaces based on use
+showAppExposeGestureEnabled = true
 show-recents = false
+wvous-bl-corner = 11 # Launchpad
+wvous-br-corner = 4 # Show Desktop
+wvous-tr-corner = 12 # Notification Center
 # static-only = true # only show open apps
 
 ["com.apple.finder"] # killall Finder

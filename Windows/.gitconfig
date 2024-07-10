@@ -1,4 +1,5 @@
 # vim: syntax=gitconfig
 
 [core]
+	# whoever builds git for windows is stupid and uses a different ssh and I hate them
 	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe

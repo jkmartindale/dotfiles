@@ -47,5 +47,16 @@ function Stop-Proxy {
 Set-Alias -Name source -Value Invoke-Expression
 
 function steam-idle {
-    steam-idle.exe ($args -replace "[^\d]*")
+    if ($args.Length -lt 1) {
+        return Write-Error "Please provide an appid."
+    }
+    $app = $args[0] -replace "[^\d]*"
+    if ($args.Length -ge 2) {
+        $minutes = $args[1]
+        return Start-Process powershell.exe -WindowStyle hidden -ArgumentList (
+            '-Command "$h = Start-Process steam-idle.exe -ArgumentList ' + $app +
+            ' -PassThru; Start-Sleep -Seconds ' + $minutes * 60 +
+            '; stop-process $h"')
+    }
+    return steam-idle.exe $app
 }

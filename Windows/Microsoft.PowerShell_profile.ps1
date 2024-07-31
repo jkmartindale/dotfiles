@@ -44,11 +44,6 @@ function Stop-Proxy {
     Remove-Item Env:\HTTPS_PROXY
 }
 
-function Start-PSAdmin
-{
-    Start-Process PowerShell -Verb RunAs
-}
-
 Set-Alias -Name source -Value Invoke-Expression
 
 function steam-idle {

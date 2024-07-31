@@ -47,6 +47,7 @@ function Stop-Proxy {
 Set-Alias -Name source -Value Invoke-Expression
 
 function steam-idle {
+    # steam-idle.exe from https://github.com/JonasNilson/idle_master_extended
     if ($args.Length -lt 1) {
         return Write-Error "Please provide an appid."
     }

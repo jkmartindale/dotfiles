@@ -51,13 +51,13 @@ function steam-idle {
     if ($args.Length -lt 1) {
         return Write-Error "Please provide an appid."
     }
-    $app = $args[0] -replace "[^\d]*"
+    $app = $args[0] -replace "[^\d]*" # so I can paste steam:/// URIs without trimming
     if ($args.Length -ge 2) {
         $minutes = $args[1]
         return Start-Process powershell.exe -WindowStyle hidden -ArgumentList (
-            '-Command "$h = Start-Process steam-idle.exe -ArgumentList ' + $app +
+            '-Command "$process = Start-Process steam-idle.exe -ArgumentList ' + $app +
             ' -PassThru; Start-Sleep -Seconds ' + $minutes * 60 +
-            '; stop-process $h"')
+            '; Stop-Process $process"')
     }
     return steam-idle.exe $app
 }

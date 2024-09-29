@@ -15,6 +15,12 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 
 $env:PATH = (($env:PATH.Split(';') | Where-Object { $_ -ne "C:\WINDOWS\system32" }) -join ';') + ";C:\WINDOWS\system32"
 
+# Supports a workflow to check my online accounts every 180 days
+function 1pcheck {
+    $items = (op item list --categories Login --vault Private --format json | ConvertFrom-Json)
+    $items | Sort-Object -Property updated_at | Select-Object -First ($items.Length / 180) -Property title,additional_information
+}
+
 function ConvertFrom-MIME { $args | python -c "__import__('quopri').decode(__import__('sys').stdin.buffer, __import__('sys').stdout.buffer)" }
 
 Remove-Item alias:curl

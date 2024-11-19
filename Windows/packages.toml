@@ -26,7 +26,6 @@ winget = [
     "EpicGames.EpicGamesLauncher",
     "Google.Chrome",
     "RevoUninstaller.RevoUninstaller",
-    "Starship.Starship",
     "Telegram.TelegramDesktop",
     "Valve.Steam"
 ]

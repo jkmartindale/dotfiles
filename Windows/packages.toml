@@ -22,6 +22,7 @@ winget = [
 [personal]
 winget = [
     "AgileBits.1Password",
+    "AgileBits.1Password.CLI",
     "Discord.Discord",
     "EpicGames.EpicGamesLauncher",
     "Google.Chrome",

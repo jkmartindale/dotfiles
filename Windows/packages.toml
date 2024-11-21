@@ -10,6 +10,7 @@ apt = [
 winget = [
     "-Microsoft.DevHome",
     "7zip.7zip",
+    "BurntSushi.ripgrep.MSVC",
     "cURL.cURL",
     "Git.Git",
     "Microsoft.VisualStudioCode",
@@ -26,9 +27,11 @@ winget = [
     "Discord.Discord",
     "EpicGames.EpicGamesLauncher",
     "Google.Chrome",
+    "Mozilla.Firefox",
     "RevoUninstaller.RevoUninstaller",
     "Telegram.TelegramDesktop",
-    "Valve.Steam"
+    "Valve.Steam",
+    "VideoLAN.VLC",
 ]
 
 [work]

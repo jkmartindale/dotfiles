@@ -4,11 +4,18 @@ apt = [
     "npm",
     "python-is-python3",
     "python3-pip",
+    "python3-pipdeptree",
+    "python3-plyvel",
     "python3-venv",
+    "python3-wheel",
     "wslu",
 ]
+pip = [
+    "pipdeptree",
+    "pyperclip",
+    "wheel",
+]
 winget = [
-    "-Microsoft.DevHome",
     "7zip.7zip",
     "BurntSushi.ripgrep.MSVC",
     "cURL.cURL",
@@ -21,6 +28,11 @@ winget = [
 ]
 
 [personal]
+pip = [
+    "python-dotenv",
+    "Telethon",
+    "tzdata",
+]
 winget = [
     "AgileBits.1Password",
     "AgileBits.1Password.CLI",
@@ -32,6 +44,9 @@ winget = [
     "Telegram.TelegramDesktop",
     "Valve.Steam",
     "VideoLAN.VLC",
+    # Lenovo Legion 5 Pro
+    "-ARP\\Machine\\X86\\Legion Arena_is1",
+    "-ARP\\Machine\\X86\\Lenovo Now",
 ]
 
 [work]

@@ -14,9 +14,49 @@ Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\Directory\shell\AnyCode]
 [-HKEY_CLASSES_ROOT\Directory\Background\shell\AnyCode]
 
-; Hide "Add to Favorites" context menu entry
+; Remove "Add to Favorites" context menu entry
 [HKEY_CLASSES_ROOT\*\shell\pintohomefile]
 "ProgrammaticAccessOnly"=""
+
+; Remove "Include in library" context menu entry
+[-HKEY_CLASSES_ROOT\Folder\ShellEx\ContextMenuHandlers\Library Location]
+
+; Remove "Give access to" context menu entry
+[-HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\Sharing]
+[-HKEY_CLASSES_ROOT\Directory\Background\shellex\ContextMenuHandlers\Sharing]
+[-HKEY_CLASSES_ROOT\Directory\shellex\ContextMenuHandlers\Sharing]
+[-HKEY_CLASSES_ROOT\Drive\shellex\ContextMenuHandlers\Sharing]
+
+[HKEY_CURRENT_USER\Software\7-Zip\FM]
+"FullRow"=dword:00000001            ; Full row select
+"ShowDots"=dword:00000001           ; Show ".." item
+"ShowRealFileIcons"=dword:00000001  ; Show real file icons
+"Toolbars"=dword:0000000f           ; Large toolbar buttons
+
+; Automatic accent color
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"AutoColorization"=dword:00000001
+
+[HKEY_CURRENT_USER\Control Panel\International]
+"sShortDate"="yyyy-MM-dd"
+"sShortTime"="H:mm"
+"sTimeFormat"="HH:mm:ss" ; Long time
+
+; PrtSc should print screen, not open Snipping Tool
+[HKEY_CURRENT_USER\Control Panel\Keyboard]
+"PrintScreenKeyForSnippingEnabled"=dword:00000000
+
+; Disable Filter keys shortcut
+[HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
+"Flags"="122"
+
+; Disable Sticky keys shortcut
+[HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys]
+"Flags"="506"
+
+; Enable Toggle keys
+[HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys]
+"Flags"="63"
 
 ; Restore old context menu
 [HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
@@ -26,6 +66,67 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
 
+; Disable F1 help key in Explorer
+[HKEY_CURRENT_USER\Software\Classes\TypeLib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win32]
+@=""
+[HKEY_CURRENT_USER\Software\Classes\TypeLib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win64]
+@=""
+
+; Disable Edge Search Bar
+[HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Edge]
+"WebWidgetAllowed"=dword:00000000
+
+; Disable ad targeting
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo]
+"Enabled"=dword:00000000
+
+; Disable recent files list in Home
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"ShowRecent"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"DisallowShaking"=dword:00000000            ; Enable Aero Shake
+"DITest"=dword:00000000                     ; Disable "When I drag a window, let me snap it without dragging all the way to the screen edge"
+"EnableSnapBar"=dword:00000000              ; Disable "Show snap layouts when I drag a window to the top of my screen"
+"Hidden"=dword:00000001                     ; Show hidden files
+"HideDrivesWithNoMedia"=dword:00000000      ; Show empty drives
+"HideFileExt"=dword:00000000                ; Show file extensions
+"HideMergeConflicts"=dword:00000000         ; Show folder merge conflicts
+"LaunchTo"=dword:00000004                   ; Open File Explorer to OneDrive
+"MultiTaskingAltTabFilter"=dword:00000003   ; Don't show tabs from apps when snapping or pressing Alt+Tab
+"ShowEncryptCompressedColor"=dword:00000001 ; Show encrypted and compressed files in color
+"ShowSuperHidden"=dword:00000001            ; Show protected operating system files
+"SnapAssist"=dword:00000000                 ; Disable "When I snap a window, suggest what I can snap next to it"
+"Start_IrisRecommendations"=dword:00000000  ; Hide ads in Start recommended section
+"TaskbarAl"=dword:00000000                  ; Left-aligned taskbar icons
+; "TaskbarDa"=dword:00000000                  ; Hide widgets button (throws an error)
+"TaskbarMn"=dword:00000000                  ; Hide chat button
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers]
+"DisableAutoplay"=dword:00000001
+
+; Expand file operations dialog
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager]
+"EnthusiastMode"=dword:00000001
+
+; Don't confirm deleting a OneDrive online-only file
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\SyncRootManager]
+"DoNotShowAgain"=dword:00000001
+
+; Disable Screen Sketch notifications
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Microsoft.ScreenSketch_8wekyb3d8bbwe!App]
+"Enabled"=dword:00000000
+
+; Three-finger touchpad tap as middle click
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PrecisionTouchPad]
+"ThreeFingerTapEnabled"=dword:00000004
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run]
+"Discord"=-
+"EpicGamesLauncher"=-
+"Spotify"=-
+"Steam"=-
+
 ; Disable web results in Windows search
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 "BingSearchEnabled"=dword:00000000
@@ -33,3 +134,37 @@ Windows Registry Editor Version 5.00
 ; Disable "Edit in Notepad" shell extension
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
 "{CA6CC9F1-867A-481E-951E-A28C5E4F01EA}"=""
+
+; Disable clipboard suggested actions
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard]
+"Disabled"=dword:00000001
+
+; Dark theme
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+"AppsUseLightTheme"=dword:00000000
+"SystemUsesLightTheme"=dword:00000000
+
+; Disable Windows Script Host
+[HKEY_CURRENT_USER\Software\Microsoft\Windows Script Host\Settings]
+"Enabled":dword:00000000
+
+; Disable suggesting ways to get the most out of Windows and finish setting up this device
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
+"ScoobeSystemSettingEnabled"=dword:00000000
+
+; Show accent color on title bars and window borders
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
+"ColorPrevalence"=dword:00000001
+
+; Enable clipboard history
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Clipboard]
+"IsCloudAndHistoryFeatureAvailable"=dword:00000001
+"IsClipboardSignalProducingFeatureAvailable"=dword:00000001 ; Sync
+
+; Disable Windows Security tray icon
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
+"SecurityHealth"=-
+
+; Enable long file paths
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"LongPathsEnabled"=dword:00000001

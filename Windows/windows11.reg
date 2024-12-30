@@ -42,7 +42,7 @@ Windows Registry Editor Version 5.00
 "sShortTime"="H:mm"
 "sTimeFormat"="HH:mm:ss" ; Long time
 
-; PrtSc should print screen, not open Snipping Tool
+; PrtSc should print screen, not open Snipping Tool (Win+Shift+S exists, I'm not a baby)
 [HKEY_CURRENT_USER\Control Panel\Keyboard]
 "PrintScreenKeyForSnippingEnabled"=dword:00000000
 
@@ -99,7 +99,7 @@ Windows Registry Editor Version 5.00
 "SnapAssist"=dword:00000000                 ; Disable "When I snap a window, suggest what I can snap next to it"
 "Start_IrisRecommendations"=dword:00000000  ; Hide ads in Start recommended section
 "TaskbarAl"=dword:00000000                  ; Left-aligned taskbar icons
-; "TaskbarDa"=dword:00000000                  ; Hide widgets button (throws an error)
+"TaskbarDa"=dword:00000000                  ; Hide widgets button (typically throws an error and has to be changed through Settings)
 "TaskbarMn"=dword:00000000                  ; Hide chat button
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers]

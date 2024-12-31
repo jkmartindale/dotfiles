@@ -38,6 +38,7 @@ Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "UserPreferencesMask"
     "Microsoft.WindowsMaps"
     "MicrosoftCorporationII.MicrosoftFamily"
     "MicrosoftTeams"
+    "MSTeams"
 ) | ForEach-Object { Get-AppxPackage $_ | Remove-AppxPackage }
 
 Add-WindowsCapability -Online -Name (Get-WindowsCapability -Online -Name "App.WirelessDisplay.Connect*").Name
@@ -65,3 +66,17 @@ URL=com.epicgames.launcher://apps/0584d2013f0149a791e7b9bad0eec102%3A6e563a2c0f5
 IconFile=C:\Program Files\Epic Games\GTAV\PlayGTAV.exe
 "@ | Set-Content -Path "$path\Grand Theft Auto V.url"
 Move-Item -Path "$path\..\Epic Games Launcher.lnk" -Destination $path
+
+Remove-Item "$([Environment]::GetFolderPath('Desktop'))\*.lnk"
+Remove-Item "$env:PUBLIC\Desktop\*.lnk"
+
+# CaskaydiaMono Nerd Font
+$temp = Join-Path $([System.IO.Path]::GetTempPath()) "CascadiaMono-$([System.IO.Path]::GetRandomFileName())"
+New-Item -ItemType Directory -Path $temp
+$zip = "$temp\CascadiaMono.zip"
+Invoke-WebRequest -Uri https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaMono.zip -OutFile $zip
+Expand-Archive -Path $zip -DestinationPath $temp
+# https://www.alkanesolutions.co.uk/2021/12/06/installing-fonts-with-powershell/
+$fontNamespace = (New-Object -ComObject Shell.Application).Namespace(0x14)
+Get-ChildItem -Path "$temp\*.ttf" | ForEach-Object { $fontNamespace.CopyHere($_.FullName,0x14) }
+Remove-Item -Path $temp -Recurse

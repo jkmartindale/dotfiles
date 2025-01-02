@@ -80,3 +80,6 @@ Expand-Archive -Path $zip -DestinationPath $temp
 $fontNamespace = (New-Object -ComObject Shell.Application).Namespace(0x14)
 Get-ChildItem -Path "$temp\*.ttf" | ForEach-Object { $fontNamespace.CopyHere($_.FullName,0x14) }
 Remove-Item -Path $temp -Recurse
+
+# Force display all tray icons (at the time of execution)
+Get-ChildItem -Path 'HKCU:\Control Panel\NotifyIconSettings\' | ForEach-Object { Set-ItemProperty -Path "HKCU:\$($_.Name)" -Name IsPromoted -Value 1 }

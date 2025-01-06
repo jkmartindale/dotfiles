@@ -109,3 +109,7 @@ $localstate.browser.enabled_labs_experiments += "scrollable-tabstrip@2"
 $localstate.browser.enabled_labs_experiments += "top-chrome-toasts@6"
 $localstate.browser.hovercard.memory_usage_enabled = $false
 ConvertTo-Json $localstate -Compress -Depth 100 | Out-File $statePath -Encoding UTF8
+
+# Nuke Chrome extensions installed by other apps
+Remove-Item -Path HKCU:\SOFTWARE\Google\Chrome\Extensions -Recurse
+Remove-Item -Path HKLM:\SOFTWARE\Google\Chrome\Extensions -Recurse

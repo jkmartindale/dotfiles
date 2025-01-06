@@ -89,3 +89,23 @@ Get-ChildItem -Path 'HKCU:\Control Panel\NotifyIconSettings\' | ForEach-Object {
 reg load HKLM\_Settings $env:LOCALAPPDATA\Packages\Microsoft.ScreenSketch_8wekyb3d8bbwe\Settings\settings.dat
 reg import HKLM\_Settings "Snipping Tool.reg"
 reg unload HKLM\_Settings
+
+# Edit Chrome settings (probably a bad idea)
+$prefsPath = "$env:LOCALAPPDATA\Google\Chrome\User Data\Default\Preferences"
+$preferences = Get-Content $prefsPath -Encoding UTF8 | ConvertFrom-Json
+$preferences.bookmark_bar.show_tab_groups = $false
+$preferences.devtools.preferences.currentDockState = "undocked"
+$preferences.download.default_directory = "$env:USERPROFILE\Desktop"
+$preferences.download.prompt_for_download = $true
+$preferences.omnibox.prevent_url_elisions = $true
+$preferences.omnibox.show_google_lens_shortcut = $false
+$preferences.savefile = "$env:USERPROFILE\Desktop"
+ConvertTo-Json $preferences -Compress -Depth 100 | Out-File $prefsPath -Encoding UTF8
+$statePath = "$env:LOCALAPPDATA\Google\Chrome\User Data\Local State"
+$localstate = Get-Content $statePath -Encoding UTF8 | ConvertFrom-Json
+# Scroll tabs instead of sending them into the shadow realm for some reason
+$localstate.browser.enabled_labs_experiments += "scrollable-tabstrip@2"
+# Disable copy URL toast messages designed by morons for morons
+$localstate.browser.enabled_labs_experiments += "top-chrome-toasts@6"
+$localstate.browser.hovercard.memory_usage_enabled = $false
+ConvertTo-Json $localstate -Compress -Depth 100 | Out-File $statePath -Encoding UTF8

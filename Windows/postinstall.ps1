@@ -83,3 +83,9 @@ Remove-Item -Path $temp -Recurse
 
 # Force display all tray icons (at the time of execution)
 Get-ChildItem -Path 'HKCU:\Control Panel\NotifyIconSettings\' | ForEach-Object { Set-ItemProperty -Path "HKCU:\$($_.Name)" -Name IsPromoted -Value 1 }
+
+# Snipping Tool's most annoying setting
+# https://www.damirscorner.com/blog/posts/20150117-ManipulatingSettingsDatFileWithSettingsFromWindowsStoreApps.html
+reg load HKLM\_Settings $env:LOCALAPPDATA\Packages\Microsoft.ScreenSketch_8wekyb3d8bbwe\Settings\settings.dat
+reg import HKLM\_Settings "Snipping Tool.reg"
+reg unload HKLM\_Settings

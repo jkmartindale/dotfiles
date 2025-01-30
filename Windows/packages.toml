@@ -3,11 +3,6 @@ apt = [
     "npm",
     "wslu",
 ]
-pip = [
-    "pipdeptree",
-    "pyperclip",
-    "wheel",
-]
 winget = [
     "7zip.7zip",
     "BurntSushi.ripgrep.MSVC",

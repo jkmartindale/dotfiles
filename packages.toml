@@ -1,29 +1,20 @@
 [base]
 apt =[
     "build-essential",
-    "python-is-python3",
-    # Python build
-    "libbz2-dev",
-    "libffi-dev",
-    "liblzma-dev",
-    "libncursesw5-dev",
-    "libreadline-dev",
-    "libsqlite3-dev",
-    "libssl-dev",
-    "libxml2-dev",
-    "libxmlsec1-dev",
-    "tk-dev",
-    "xz-utils",
-    "zlib1g-dev",
 ]
 brew = [
     "fish",
     "jq",
-    "pyenv",
     "starship",
 ]
+pip = [
+    "wheel",
+    "pipdeptree",
+    "pipx",
+    "pyperclip",
+]
 
-[work]
+[pentest]
 brew = [
     "gitleaks",
     "sccache",
@@ -33,13 +24,8 @@ brew = [
 fisher = [
     "jorgebucaran/nvm.fish",
 ]
-pip = [
-    "wheel",
-    "pipdeptree",
-]
 pipx = [
     "objection",
-    "scapy[complete]",
     "semgrep",
 ]
 

@@ -1,6 +1,7 @@
 [base]
 apt =[
     "build-essential",
+    "keychain",
 ]
 brew = [
     "fish",

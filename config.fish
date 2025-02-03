@@ -1,4 +1,4 @@
-ssh-add -A 2>/dev/null
+eval (keychain --eval 2> /dev/null)
 
 # Scripts etc. don't need all my laziness enablers
 if not status is-interactive

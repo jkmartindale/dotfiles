@@ -28,6 +28,7 @@ winget = [
     "EpicGames.EpicGamesLauncher",
     "Google.Chrome",
     "Mozilla.Firefox",
+    "PortSwigger.BurpSuite.Community",
     "RevoUninstaller.RevoUninstaller",
     "Telegram.TelegramDesktop",
     "Valve.Steam",

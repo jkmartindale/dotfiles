@@ -33,15 +33,6 @@ Windows Registry Editor Version 5.00
 "ShowRealFileIcons"=dword:00000001  ; Show real file icons
 "Toolbars"=dword:0000000f           ; Large toolbar buttons
 
-; Automatic accent color
-[HKEY_CURRENT_USER\Control Panel\Desktop]
-"AutoColorization"=dword:00000001
-
-[HKEY_CURRENT_USER\Control Panel\International]
-"sShortDate"="yyyy-MM-dd"
-"sShortTime"="H:mm"
-"sTimeFormat"="HH:mm:ss" ; Long time
-
 ; PrtSc should print screen, not open Snipping Tool (Win+Shift+S exists, I'm not a baby)
 [HKEY_CURRENT_USER\Control Panel\Keyboard]
 "PrintScreenKeyForSnippingEnabled"=dword:00000000
@@ -61,6 +52,21 @@ Windows Registry Editor Version 5.00
 ; Remove Bluetooth icon from tray
 [HKEY_CURRENT_USER\Control Panel\Bluetooth]
 "Notification Area Icon"=dword:00000000
+
+; Automatic accent color
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"AutoColorization"=dword:00000001
+
+[HKEY_CURRENT_USER\Control Panel\International]
+"sShortDate"="yyyy-MM-dd"   ; ISO-8601
+"sShortTime"="H:mm"         ; 24-hour time (short format)
+"sTimeFormat"="HH:mm:ss"    ; 24-hour time (long format)
+
+; Show UTC clock in the time flyout panel
+[HKEY_CURRENT_USER\Control Panel\TimeDate\AdditionalClocks\1]
+"DisplayName"="UTC"
+"TzRegKeyName"="UTC"
+"Enable"=dword:00000001
 
 ; Restore old context menu
 [HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
@@ -130,6 +136,10 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\SyncRootManager]
 "DoNotShowAgain"=dword:00000001
 
+; Disable Lenovo Vantage notifications
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\E046963F.LenovoCompanion_k1h2ywk1493x8!App]
+"Enabled"=dword:00000000
+
 ; Disable Screen Sketch notifications
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Microsoft.ScreenSketch_8wekyb3d8bbwe!App]
 "Enabled"=dword:00000000
@@ -137,6 +147,10 @@ Windows Registry Editor Version 5.00
 ; Disable sound for Screenwise Panel notifications
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe!com.google.android.apps.userpanel]
 "SoundFile"=""
+
+; Disable Suggested notifications that aren't very helpful
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.Suggested]
+"Enabled"=dword:00000000
 
 ; Three-finger touchpad tap as middle click
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PrecisionTouchPad]

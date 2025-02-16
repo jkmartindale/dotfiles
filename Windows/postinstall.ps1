@@ -113,3 +113,12 @@ ConvertTo-Json $localstate -Compress -Depth 100 | Out-File $statePath -Encoding 
 # Nuke Chrome extensions installed by other apps
 Remove-Item -Path HKCU:\SOFTWARE\Google\Chrome\Extensions -Recurse
 Remove-Item -Path HKLM:\SOFTWARE\Google\Chrome\Extensions -Recurse
+
+# Copy Spotify settings
+$spotifyProfile = @("$env:APPDATA\Spotify", "$env:LOCALAPPDATA\Packages\SpotifyAB.SpotifyMusic_zpdnekdrzrea0\LocalState\Spotify") |
+    ForEach-Object {
+        Get-ChildItem "$_\Users" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Fullname -First 1
+    } | Where-Object { $_ } | Select-Object -First 1
+if ($spotifyProfile) {
+    Copy-Item ../spotify.properties "$spotifyProfile\prefs"
+}

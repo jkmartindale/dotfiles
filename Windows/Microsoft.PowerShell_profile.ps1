@@ -17,8 +17,9 @@ $env:PATH = (($env:PATH.Split(';') | Where-Object { $_ -ne "C:\WINDOWS\system32"
 
 # Supports a workflow to check my online accounts every 180 days
 function 1pcheck {
-    $items = (op item list --categories Login --vault Private --format json | ConvertFrom-Json)
-    $items | Sort-Object -Property updated_at | Select-Object -First ([math]::ceiling($items.Length / 180)) -Property title, @{Name='username'; Expression='additional_information'}
+    $user_id = (op user list --format json | ConvertFrom-JSON)[0].id
+    $items = (op item list --long --format json | ConvertFrom-Json)
+    $items | Where-Object { $_.last_edited_by -eq $user_id -and ($_.category | Select-String -NotMatch CREDIT_CARD,DOCUMENT,MEMBERSHIP,PASSPORT,PASSWORD,SECURE_NOTE,SERVER,SOFTWARE_LICENSE,WIRELESS_ROUTER) } | Sort-Object -Property updated_at | Select-Object -First ([math]::ceiling($items.Length / 180)) -Property title, @{Name='username'; Expression='additional_information'}
 }
 
 function ConvertFrom-MIME { $args | python -c "__import__('quopri').decode(__import__('sys').stdin.buffer, __import__('sys').stdout.buffer)" }

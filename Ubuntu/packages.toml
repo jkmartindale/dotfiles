@@ -1,0 +1,17 @@
+[base]
+apt = [
+    "libinput-dev", # for https://gitlab.com/warningnonpotablewater/libinput-config
+    "meson",
+]
+flathub = [
+    "com.mattjakeman.ExtensionManager",
+]
+gnome-extensions = [
+    "1160", # Dash to Panel
+    "4269", # Alphabetical App Grid
+]
+
+[work]
+apt = [
+    "microsoft-edge-stable",
+]

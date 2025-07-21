@@ -149,9 +149,6 @@ ProtectOpenedApps = false
 SUEnableAutomaticChecks = true
 
 ["org.p0deje.Maccy"]
-KeyboardShortcuts_delete = '{\\"carbonKeyCode\\":51,\\"carbonModifiers\\":2048}'
-KeyboardShortcuts_pin = '{\\"carbonKeyCode\\":35,\\"carbonModifiers\\":2048}'
-KeyboardShortcuts_popup = '{\\"carbonModifiers\\":768,\\"carbonKeyCode\\":8}'
 hideTitle = true
 removeFormattingByDefault = true
 showInStatusBar = false

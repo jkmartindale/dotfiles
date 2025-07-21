@@ -1,7 +1,7 @@
 # /usr/libexec/PlistBuddy
 # https://github.com/karmi/dotfiles/blob/master/mac/__application_preferences.sh
 
-["Apple Global Domain"]
+["NSGlobalDomain"]
 AppleICUDateFormatStrings = { 1 = "y-MM-dd" }
 AppleICUForce24HourTime = true
 AppleInterfaceStyle = "Dark"

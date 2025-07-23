@@ -7,13 +7,12 @@
 AppleICUDateFormatStrings = { 1 = "y-MM-dd" }
 AppleICUForce24HourTime = true
 AppleInterfaceStyle = "Dark"
-AppleKeyboardUIMode = 2                         # Move focus with Tab/Shift-Tab
 AppleMenuBarVisibleInFullscreen = true
 ApplePressAndHoldEnabled = false                # Repeat a key when held down, instead of showing accents
 AppleScrollerPagingBehavior = true              # Jump to spot clicked in scroll bar
 AppleShowAllExtensions = true
 "com.apple.mouse.linear" = true                 # finally, a bearable macOS mouse experience
-"com.apple.mouse.scaling" = 2.5                 # What if the cursor wasn't slower than the Mac Pro refresh cycle?
+"com.apple.mouse.scaling" = 1.5                 # What if the cursor wasn't slower than the Mac Pro refresh cycle?
 NSAutomaticCapitalizationEnabled = false
 NSAutomaticPeriodSubstitutionEnabled = false    # No more double space for period
 NSAutomaticQuoteSubstitutionEnabled = false

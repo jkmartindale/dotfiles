@@ -4,15 +4,11 @@ brew = [
     "alt-tab",
     "captin",
     "curl",
-    "eqmac",
     "homebrew/cask-fonts/font-caskaydia-cove-nerd-font", # for starship
     "git",
     "google-chrome",
     "hiddenbar",
-    "logitech-g-hub",
     "iterm2",
-    "jq",
-    "karabiner-elements",
     "keka",
     "kekaexternalhelper",
     "maccy",
@@ -31,11 +27,10 @@ brew = [
 [personal]
 brew = [
     "1password",
+    "eqmac",
+    "logitech-g-hub",
     "notion",
     "telegram",
-]
-npm = [
-    "vercel",
 ]
 
 [mobile]

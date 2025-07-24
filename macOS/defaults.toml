@@ -33,6 +33,7 @@ DSDontWriteUSBStores = true
 
 ["com.apple.dock"] # killall Dock
 enable-spring-load-actions-on-all-items = true # Drag file over Dock item to open the app
+enterMissionControlByTopWindowDrag = false
 expose-group-apps = false
 mineffect = "suck"
 minimize-to-application = true
@@ -53,21 +54,10 @@ FXEnableExtensionChangeWarning = false
 FXPreferredViewStyle = "Nlsv" # Prefer list view
 NSDocumentSaveNewDocumentsToCloud = false
 ShowPathbar = true # Show breadcrumbs at the bottom
-
-# macOS is a bad operating system
-ComputerViewSettings.CustomViewStyleVersion.ExtendedListViewSettingsV2.calculateAllSizes = true
-ComputerViewSettings.CustomViewStyleVersion.ListViewSettings.calculateAllSizes = true
-FK_DefaultListViewSettings.calculateAllSizes = true
-FK_StandardViewSettings.ExtendedListViewSettingsV2.calculateAllSizes = true
-FK_StandardViewSettings.ListViewSettings.calculateAllSizes = true
-PackageViewSettings.ExtendedListViewSettingsV2.calculateAllSizes = true
-PackageViewSettings.ListViewSettings.calculateAllSizes = true
-SearchViewSettings.ExtendedListViewSettingsV2.calculateAllSizes = true
-SearchViewSettings.ListViewSettings.calculateAllSizes = true
+# defaults export com.apple.finder - | plutil -replace StandardViewSettings.ExtendedListViewSettingsV2.calculateAllSizes -bool FALSE -o - - | plutil -replace StandardViewSettings.ListViewSettings.calculateAllSizes -bool FALSE -o - - | defaults import com.apple.finder  -
+# When I naively set dict values, Finder crashed whenever I tried to open Quick Look, and it had other weird view settings that wouldn't update when I changed them
 StandardViewSettings.ExtendedListViewSettingsV2.calculateAllSizes = true
 StandardViewSettings.ListViewSettings.calculateAllSizes = true
-TrashViewSettings.ExtendedListViewSettingsV2.calculateAllSizes = true
-TrashViewSettings.ListViewSettings.calculateAllSizes = true
 
 ["com.apple.menuextra.clock"] # killall SystemUIServer
 DateFormat = "\"EEE d MMM H:mm\""
@@ -85,6 +75,9 @@ AutomaticDownload = true
 AutomaticallyInstallMacOSUpdates = true
 ConfigDataInstall = true
 CriticalUpdateInstall = true
+
+["com.apple.WindowManager"]
+EnableStandardClickToShowDesktop = false
 
 ["com.100hps.captin"]
 auto_launch = true

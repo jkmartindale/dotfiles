@@ -4,7 +4,7 @@ brew = [
     "alt-tab",
     "captin",
     "curl",
-    "homebrew/cask-fonts/font-caskaydia-cove-nerd-font", # for starship
+    "font-caskaydia-cove-nerd-font", # for starship
     "git",
     "google-chrome",
     "hiddenbar",

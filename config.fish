@@ -1,6 +1,7 @@
 #!/usr/bin/env fish
 
 eval (brew shellenv)
+fish_add_path ~/.local/bin # pipx and Linuxbrew
 
 # Scripts etc. don't need all my laziness enablers
 if not status is-interactive

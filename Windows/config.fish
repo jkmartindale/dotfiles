@@ -8,9 +8,6 @@ function wsl-interop -d "Re-enable WSL interop when systemd nukes it"
     sudo systemctl restart systemd-binfmt
 end
 
-# Homebrew
-fish_add_path ~/.local/bin
-
 # Unified config
 set -gx REPOSITORIES (wslpath (wslvar USERPROFILE))/Repositories
 source $REPOSITORIES/dotfiles/config.fish

@@ -9,7 +9,6 @@ function wsl-interop -d "Re-enable WSL interop when systemd nukes it"
 end
 
 # Homebrew
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fish_add_path ~/.local/bin
 
 # Unified config

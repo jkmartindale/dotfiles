@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+eval (brew shellenv)
+
 # Scripts etc. don't need all my laziness enablers
 if not status is-interactive
     exit

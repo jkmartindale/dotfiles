@@ -20,10 +20,6 @@ function fish_title
     echo [fish] (basename $PWD)
 end
 
-# Rust
-fish_add_path ~/.cargo/bin
-set -gx RUSTC_WRAPPER (which sccache)
-
 # Aliases/functions
 alias config="$EDITOR ~/.config/fish/config.fish"
 alias brewlist='brew leaves | xargs brew deps --include-build --tree' # https://stackoverflow.com/a/61928483/3427178
@@ -35,6 +31,13 @@ end
 if test -d (brew --prefix)"/share/fish/vendor_completions.d"
     set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
 end
+
+# Python
+pyenv init - fish | source
+
+# Rust
+fish_add_path ~/.cargo/bin
+set -gx RUSTC_WRAPPER (which sccache)
 
 # Employer-specific config I don't want to publish
 if test -e ~/.config/fish/work.fish

@@ -6,6 +6,7 @@ apt =[
 brew = [
     "fish",
     "jq",
+    "pyenv",
     "starship",
 ]
 pip = [

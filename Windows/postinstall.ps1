@@ -95,6 +95,7 @@ $prefsPath = "$env:LOCALAPPDATA\Google\Chrome\User Data\Default\Preferences"
 $preferences = Get-Content $prefsPath -Encoding UTF8 | ConvertFrom-Json
 $preferences.bookmark_bar.show_tab_groups = $false
 $preferences.devtools.preferences.currentDockState = "undocked"
+$preferences.devtools.synced_preferences_sync_disabled["disable-self-xss-warning"] = $true
 $preferences.download.default_directory = "$env:USERPROFILE\Desktop"
 $preferences.download.prompt_for_download = $true
 $preferences.omnibox.prevent_url_elisions = $true
@@ -105,9 +106,10 @@ $statePath = "$env:LOCALAPPDATA\Google\Chrome\User Data\Local State"
 $localstate = Get-Content $statePath -Encoding UTF8 | ConvertFrom-Json
 # Scroll tabs instead of sending them into the shadow realm for some reason
 $localstate.browser.enabled_labs_experiments += "scrollable-tabstrip@2"
-# Disable copy URL toast messages designed by morons for morons
 $localstate.browser.enabled_labs_experiments += "top-chrome-toasts@6"
 $localstate.browser.hovercard.memory_usage_enabled = $false
+$localstate.settings.a11y.overscroll_history_navigation = $false
+$localstate.settings.toast.alert_level = 1 # Disable copy URL toast messages designed by morons for morons
 ConvertTo-Json $localstate -Compress -Depth 100 | Out-File $statePath -Encoding UTF8
 
 # Nuke Chrome extensions installed by other apps

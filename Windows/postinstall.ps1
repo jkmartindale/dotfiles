@@ -93,21 +93,27 @@ reg unload HKLM\_Settings
 # Edit Chrome settings (probably a bad idea)
 $prefsPath = "$env:LOCALAPPDATA\Google\Chrome\User Data\Default\Preferences"
 $preferences = Get-Content $prefsPath -Encoding UTF8 | ConvertFrom-Json
+$preferences.account_values.download.prompt_for_download = $true
+$preferences.account_values.omnibox.show_google_lens_shortcut = $false
 $preferences.bookmark_bar.show_tab_groups = $false
-$preferences.devtools.preferences.currentDockState = "undocked"
-$preferences.devtools.synced_preferences_sync_disabled["disable-self-xss-warning"] = $true
-$preferences.download.default_directory = "$env:USERPROFILE\Desktop"
-$preferences.download.prompt_for_download = $true
+if (-not $preferences.compose) { $preferences | Add-Member -NotePropertyName compose -NotePropertyValue @{} }
+$preferences.compose.proactive_nudge_enabled = $false # Help me write
+$preferences.devtools.preferences.currentDockState = '"undocked"'
+$preferences.devtools.synced_preferences_sync_disabled.'disable-self-xss-warning' = $true
+if (-not $preferences.omnibox) { $preferences | Add-Member -NotePropertyName omnibox -NotePropertyValue @{} }
 $preferences.omnibox.prevent_url_elisions = $true
-$preferences.omnibox.show_google_lens_shortcut = $false
-$preferences.savefile = "$env:USERPROFILE\Desktop"
+# Because I still haven't managed to be consistent
+$downloads = "$env:USERPROFILE\Desktop"
+if (-not (Test-Path $downloads)) {
+    $downloads = "$env:USERPROFILE\Downloads"
+}
+$preferences.account_values.download | Add-Member -NotePropertyName default_directory -NotePropertyValue $downloads
+$preferences.savefile = $downloads
 ConvertTo-Json $preferences -Compress -Depth 100 | Out-File $prefsPath -Encoding UTF8
+
 $statePath = "$env:LOCALAPPDATA\Google\Chrome\User Data\Local State"
 $localstate = Get-Content $statePath -Encoding UTF8 | ConvertFrom-Json
-# Scroll tabs instead of sending them into the shadow realm for some reason
-$localstate.browser.enabled_labs_experiments += "scrollable-tabstrip@2"
-$localstate.browser.enabled_labs_experiments += "top-chrome-toasts@6"
-$localstate.browser.hovercard.memory_usage_enabled = $false
+$localstate.browser.enabled_labs_experiments += "scrollable-tabstrip@2" # Scroll tabs instead of sending them into the shadow realm for some reason
 $localstate.settings.a11y.overscroll_history_navigation = $false
 $localstate.settings.toast.alert_level = 1 # Disable copy URL toast messages designed by morons for morons
 ConvertTo-Json $localstate -Compress -Depth 100 | Out-File $statePath -Encoding UTF8

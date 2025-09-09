@@ -4,6 +4,7 @@ apt =[
     "keychain",
 ]
 brew = [
+    "awscli",
     "fish",
     "jq",
     "pyenv",

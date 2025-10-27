@@ -11,6 +11,7 @@ winget = [
     "Microsoft.VisualStudioCode",
     "Postman.Postman",
     "python3",
+    "ryanoasis.CaskaydiaCove"
     "Spotify.Spotify",
     "Starship.Starship",
 ]

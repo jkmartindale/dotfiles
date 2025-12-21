@@ -36,6 +36,12 @@ function export {
     }
 }
 
+function Get-FreeGamesPromotions {
+    (Invoke-RestMethod "https://store-site-backend-static-ipv4.ak.epicgames.com/freeGamesPromotions?locale=en-US&country=US&allowCountries=US").data.Catalog.searchStore.elements |
+    Where-Object { $null -ne $_.promotions -and $_.promotions.upcomingPromotionalOffers.Count -gt 0 } |
+    Select-Object -Property title,{$_.productSlug}
+}
+
 Set-Alias intellij idea64
 
 function profile {
@@ -68,3 +74,4 @@ function steam-idle {
     }
     return steam-idle.exe $app
 }
+
